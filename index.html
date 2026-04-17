@@ -22,10 +22,11 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 40px;
-      background: rgba(0,0,0,0.4);
       position: sticky;
       top: 0;
+      background: rgba(0,0,0,0.4);
       backdrop-filter: blur(10px);
+      z-index: 1000;
     }
 
     .logo {
@@ -37,11 +38,16 @@
     }
 
     .nav a {
-      color: white;
-      text-decoration: none;
       background: #5865F2;
       padding: 10px 20px;
       border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      transform: scale(1.05);
     }
 
     /* HERO */
@@ -61,7 +67,6 @@
     .hero p {
       color: #cbd5f5;
       font-size: 20px;
-      margin-top: 10px;
     }
 
     .btn {
@@ -74,9 +79,15 @@
       border-radius: 12px;
       font-weight: bold;
       box-shadow: 0 0 20px rgba(88,101,242,0.6);
+      transition: 0.3s;
     }
 
-    /* SECTION */
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(88,101,242,0.9);
+    }
+
+    /* FEATURES */
     .section {
       padding: 80px 20px;
       text-align: center;
@@ -95,6 +106,12 @@
       padding: 25px;
       border-radius: 15px;
       width: 260px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.08);
     }
 
     /* TESTIMONIALS */
@@ -112,6 +129,20 @@
       padding: 100px 20px;
       background: linear-gradient(90deg, #ff9933, #138808);
       color: black;
+    }
+
+    /* STICKY JOIN BUTTON */
+    .sticky-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #5865F2;
+      padding: 15px 20px;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(88,101,242,0.8);
     }
 
     footer {
@@ -164,6 +195,9 @@
     <p>Be part of India’s fastest growing Discord community</p>
     <a href="https://discord.gg/theindia" class="btn">Join Now</a>
   </div>
+
+  <!-- STICKY BUTTON -->
+  <a href="https://discord.gg/theindia" class="sticky-btn">Join 🚀</a>
 
   <footer>
     © 2026 TheIndia • bestindiandiscord.com
