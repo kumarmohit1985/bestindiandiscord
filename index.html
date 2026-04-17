@@ -22,14 +22,18 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 40px;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.4);
       position: sticky;
       top: 0;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
       font-weight: bold;
       font-size: 20px;
+      background: linear-gradient(90deg, #ff9933, white, #138808);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .nav a {
@@ -90,7 +94,16 @@
       background: rgba(255,255,255,0.05);
       padding: 25px;
       border-radius: 15px;
-      width: 250px;
+      width: 260px;
+    }
+
+    /* DISCORD WIDGET */
+    .widget {
+      margin-top: 40px;
+    }
+
+    iframe {
+      border-radius: 12px;
     }
 
     /* TESTIMONIALS */
@@ -106,7 +119,8 @@
     .cta {
       text-align: center;
       padding: 100px 20px;
-      background: #111827;
+      background: linear-gradient(90deg, #ff9933, #138808);
+      color: black;
     }
 
     footer {
@@ -127,38 +141,44 @@
 
   <!-- HERO -->
   <div class="hero">
-    <h1>India’s #1 Discord Community</h1>
-    <p>Chat • Gaming • Anime • Friends • Daily Active Vibes</p>
+    <h1>India’s Most Active Discord</h1>
+    <p>Chat • Gaming • Anime • Memes • Real Indian Community</p>
     <a href="https://discord.gg/theindia" class="btn">Join TheIndia</a>
   </div>
 
   <!-- FEATURES -->
   <div class="section">
-    <h2>Why Join Us?</h2>
+    <h2>Why Join TheIndia?</h2>
     <div class="grid">
-      <div class="card">💬 Active Chats</div>
+      <div class="card">💬 24/7 Active Chats</div>
       <div class="card">🎮 Gaming Events</div>
       <div class="card">🎧 Voice Chats</div>
-      <div class="card">😂 Memes</div>
+      <div class="card">😂 Memes & Fun</div>
       <div class="card">🎁 Giveaways</div>
       <div class="card">🇮🇳 Indian Community</div>
+    </div>
+  </div>
+
+  <!-- DISCORD LIVE WIDGET -->
+  <div class="section">
+    <h2>Live Server Preview</h2>
+    <div class="widget">
+      <iframe src="https://discord.com/widget?id=966912718902796359&theme=dark" width="350" height="500"></iframe>
     </div>
   </div>
 
   <!-- TESTIMONIALS -->
   <div class="section">
     <h2>What Members Say</h2>
-
     <div class="testimonial">“Finally an Indian server that’s actually active.”</div>
-    <div class="testimonial">“Met amazing people here, VCs are always fun.”</div>
-    <div class="testimonial">“Best place to chill after a long day.”</div>
-
+    <div class="testimonial">“Best place to chill and meet people.”</div>
+    <div class="testimonial">“VCs are always full, never boring.”</div>
   </div>
 
   <!-- CTA -->
   <div class="cta">
-    <h2>Ready to Join?</h2>
-    <p>Be part of India’s fastest growing Discord server</p>
+    <h2>Join TheIndia Today 🇮🇳</h2>
+    <p>Be part of India’s fastest growing Discord community</p>
     <a href="https://discord.gg/theindia" class="btn">Join Now</a>
   </div>
 
