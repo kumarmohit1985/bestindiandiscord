@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact Us | TheIndia Discord Server</title>
+    <meta name="description" content="Get in touch with TheIndia staff team. Join our server to open a support ticket or email us for business inquiries.">
+    <meta name="robots" content="index, follow">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #080808;
+            --text-color: #ffffff;
+            --saffron: #FF9933;
+            --green: #138808;
+            --discord: #5865F2;
+            --gold: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 0%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 100%, rgba(19, 136, 8, 0.08) 0%, transparent 40%);
+            padding: 140px 20px 60px 20px;
+        }
+
+        /* --- NAVIGATION BAR CSS --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-brand span {
+            color: var(--saffron);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--saffron);
+        }
+
+        .nav-links a.nav-btn {
+            background-color: var(--discord);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            margin-left: 10px;
+            box-shadow: 0 4px 15px -5px var(--discord);
+        }
+
+        .nav-links a.nav-btn:hover {
+            background-color: var(--text-color);
+            color: #080808;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px -5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- CONTACT PAGE CONTENT CSS --- */
+        .container {
+            max-width: 900px; 
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #FF9933, #ffffff, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- CONTACT CARDS GRID --- */
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 2px solid transparent;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: calc(50% - 30px);
+            min-width: 300px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .contact-card.discord-card:hover { border-top-color: var(--discord); }
+        .contact-card.email-card:hover { border-top-color: var(--saffron); }
+
+        .contact-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.6rem;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            flex-grow: 1; /* Pushes the button to the bottom */
+        }
+
+        .contact-card strong {
+            color: white;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn {
+            background-color: var(--discord);
+            color: white;
+            text-decoration: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .contact-btn.email-btn {
+            background-color: transparent;
+            border: 2px solid var(--saffron);
+            color: var(--text-color);
+        }
+
+        .contact-btn:hover {
+            background-color: var(--text-color);
+            color: #080808;
+            box-shadow: 0 10px 20px -10px rgba(255,255,255,0.5);
+        }
+
+        .contact-btn.email-btn:hover {
+            background-color: var(--saffron);
+            border-color: var(--saffron);
+            color: #080808;
+            box-shadow: 0 10px 20px -10px var(--saffron);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            .section-title { font-size: 2.8rem; }
+            .contact-card { width: 100%; }
+        }
+        
+        @media (max-width: 600px) {
+            nav { flex-direction: column; padding: 15px; gap: 15px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .nav-links a.nav-btn { margin-left: 0; width: 100%; text-align: center; }
+            body { padding-top: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-brand">The<span>India</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="https://discord.gg/theindia" class="nav-btn">Join Server</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="subtitle">Whether you need help from our moderation team, want to appeal a ban, or have a business proposal, we are here to listen.</p>
+
+        <div class="contact-grid">
+            
+            <div class="contact-card discord-card">
+                <div class="contact-icon">💬</div>
+                <h3>Server Support</h3>
+                <p>The fastest way to get help! Join our server, head over to the support channel, and open a ticket. Our staff team is active 24/7 to assist you.</p>
+                <a href="https://discord.gg/theindia" class="contact-btn">Open a Ticket</a>
+            </div>
+
+            <div class="contact-card email-card">
+                <div class="contact-icon">✉️</div>
+                <h3>Business & Partnerships</h3>
+                <p>For brand deals, partnerships, or official server inquiries, please reach out via email. We typically respond within 24 to 48 hours.
+                    <strong>officialtheindia@gmail.com</strong>
+                </p>
+                <a href="mailto:officialtheindia@gmail.com" class="contact-btn email-btn">Send an Email</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
