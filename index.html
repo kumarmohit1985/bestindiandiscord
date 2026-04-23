@@ -13,7 +13,7 @@
     <meta property="og:description" content="Gaming, Bollywood, Chai, and Chill. Join the largest and most welcoming Indian community on Discord!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bestindiandiscord.com">
-    <meta property="og:image" content="https://cdn.discordapp.com/embed/avatars/0.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Samarkan&display=swap" rel="stylesheet">
+    <meta property="og:image" content="https://cdn.discordapp.com/embed/avatars/0.png"> <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -46,11 +46,12 @@
             background-image: 
                 radial-gradient(circle at 15% 0%, rgba(255, 153, 51, 0.12) 0%, transparent 40%),
                 radial-gradient(circle at 85% 100%, rgba(19, 136, 8, 0.12) 0%, transparent 40%);
+            padding: 40px 0;
         }
 
         .container {
-            max-width: 900px;
-            padding: 40px 20px;
+            max-width: 1000px; /* Widened slightly to fit the grid nicely */
+            padding: 20px;
             animation: fadeIn 1.2s ease-in-out;
             z-index: 1;
         }
@@ -76,7 +77,7 @@
             text-shadow: 0px 10px 30px rgba(255, 255, 255, 0.05);
         }
 
-        p {
+        p.subtitle {
             font-size: 1.2rem;
             color: #a1a1aa;
             margin-bottom: 40px;
@@ -100,6 +101,7 @@
             box-shadow: 0 10px 20px -10px var(--discord);
             position: relative;
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .cta-btn:hover {
@@ -113,8 +115,9 @@
             display: flex;
             justify-content: center;
             gap: 25px;
-            margin-top: 60px;
             flex-wrap: wrap;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .feature-card {
@@ -123,19 +126,22 @@
             border-top: 2px solid transparent;
             padding: 25px 20px;
             border-radius: 16px;
-            width: 220px;
+            width: calc(33.333% - 25px); /* 3 cards per row */
+            min-width: 240px;
             backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            text-align: left;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .feature-card:nth-child(1):hover { border-top-color: var(--saffron); }
-        .feature-card:nth-child(2):hover { border-top-color: var(--gold); }
-        .feature-card:nth-child(3):hover { border-top-color: var(--green); }
+        /* Repeating Hover Colors for 6 cards */
+        .feature-card:nth-child(1):hover, .feature-card:nth-child(4):hover { border-top-color: var(--saffron); }
+        .feature-card:nth-child(2):hover, .feature-card:nth-child(5):hover { border-top-color: var(--gold); }
+        .feature-card:nth-child(3):hover, .feature-card:nth-child(6):hover { border-top-color: var(--green); }
 
         .feature-card h3 {
             font-size: 1.3rem;
@@ -153,9 +159,10 @@
         /* Subtle mandala/pattern decoration */
         .decor {
             font-size: 2rem;
-            margin-top: 40px;
+            margin-top: 50px;
             opacity: 0.2;
             letter-spacing: 20px;
+            text-align: center;
         }
 
         @keyframes fadeIn {
@@ -163,10 +170,14 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             h1 { font-size: 2.8rem; }
+            .feature-card { width: calc(50% - 25px); } /* 2 cards per row on tablets */
+        }
+        
+        @media (max-width: 600px) {
+            .feature-card { width: 100%; max-width: 320px; margin: 0 auto; text-align: center; } /* 1 card per row on phones */
             .features { flex-direction: column; align-items: center; }
-            .feature-card { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -175,7 +186,7 @@
     <div class="container">
         <span class="namaste">Namaste 🙏</span>
         <h1>Welcome to TheIndia</h1>
-        <p>The ultimate digital <b>Adda</b> for gamers, creators, and everyone in between. Join the most welcoming Indian community on Discord. Hang out, push ranks, and make lifelong friends.</p>
+        <p class="subtitle">The ultimate digital <b>Adda</b> for gamers, creators, and everyone in between. Join the most welcoming Indian community on Discord. Hang out, push ranks, and make lifelong friends.</p>
         
         <a href="https://discord.gg/theindia" class="cta-btn">Join the Server</a>
 
@@ -191,6 +202,19 @@
             <div class="feature-card">
                 <h3>☕ Chai & Chill</h3>
                 <p>24/7 active voice channels. Grab your chai, sit back, and vibe with us.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎵 Music & Mehfil</h3>
+                <p>Live jam sessions, Arijit Singh lo-fi streams, and premium music bots for your VCs.</p>
+            </div>
+            <div class="feature-card">
+                <h3>😂 Desi Memes</h3>
+                <p>The ultimate hub for top-tier Indian shitposting, viral trends, and dank humor.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎁 Drops & Giveaways</h3>
+                <p>Frequent Discord Nitro drops, game key giveaways, and exciting server events.</p>
             </div>
         </div>
 
