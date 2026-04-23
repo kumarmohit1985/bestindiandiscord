@@ -164,17 +164,24 @@
             background: rgba(255, 255, 255, 0.04);
         }
 
-        .vote-card:nth-child(1):hover { border-top-color: var(--saffron); }
-        .vote-card:nth-child(2):hover { border-top-color: var(--gold); }
-        .vote-card:nth-child(3):hover { border-top-color: var(--green); }
+        .vote-card:nth-child(1):hover { border-top-color: #FF3366; } /* Top.gg Pink */
+        .vote-card:nth-child(2):hover { border-top-color: #5865F2; } /* Discadia Blue */
+        .vote-card:nth-child(3):hover { border-top-color: #24b8b8; } /* Disboard Teal */
 
+        /* Updated Logo Image Styling */
         .vote-logo-container {
             height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
-            font-size: 4rem; /* Makes the emoji nice and big */
+        }
+
+        .vote-logo-container img {
+            height: 100%;
+            max-width: 150px;
+            object-fit: contain;
+            border-radius: 12px; /* Smooth edges just in case the logo is a square block */
         }
 
         .vote-card h3 {
@@ -253,21 +260,27 @@
         <div class="vote-grid">
             
             <div class="vote-card">
-                <div class="vote-logo-container">📈</div>
+                <div class="vote-logo-container">
+                    <img src="https://logo.clearbit.com/top.gg" alt="Top.gg Logo" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Top.gg&background=FF3366&color=fff&rounded=true&bold=true';">
+                </div>
                 <h3>Top.gg</h3>
                 <p>The largest Discord server directory. Vote for us here to boost our global ranking.</p>
                 <a href="https://top.gg/discord/servers/833653846489710592/vote" class="vote-btn" target="_blank">Vote on Top.gg</a>
             </div>
 
             <div class="vote-card">
-                <div class="vote-logo-container">🚀</div>
+                <div class="vote-logo-container">
+                    <img src="https://logo.clearbit.com/discadia.com" alt="Discadia Logo" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Discadia&background=5865F2&color=fff&rounded=true&bold=true';">
+                </div>
                 <h3>Discadia</h3>
                 <p>Help us bump our server to the top of the search pages for Indian community tags.</p>
                 <a href="https://discadia.com/vote/theindia/" class="vote-btn" target="_blank">Vote on Discadia</a>
             </div>
 
             <div class="vote-card">
-                <div class="vote-logo-container">🌟</div>
+                <div class="vote-logo-container">
+                    <img src="https://logo.clearbit.com/disboard.org" alt="Disboard Logo" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Disboard&background=24b8b8&color=fff&rounded=true&bold=true';">
+                </div>
                 <h3>Disboard</h3>
                 <p>Help us stay at the top of the search list! Click here to leave a review and bump the server.</p>
                 <a href="https://disboard.org/server/966912718902796359" class="vote-btn" target="_blank">Bump the Server</a>
