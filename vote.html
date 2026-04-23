@@ -216,7 +216,80 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+/* --- FOOTER CSS --- */
+        footer {
+            background: rgba(8, 8, 8, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 60px 20px 20px;
+            width: 100%;
+            margin-top: auto; /* Keeps footer at bottom even if page is short */
+            backdrop-filter: blur(10px);
+        }
 
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-brand h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .footer-brand span { color: var(--saffron); }
+
+        .footer-brand p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h3 {
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 30px;
+            height: 2px;
+            background: var(--saffron);
+        }
+
+        .footer-links ul { list-style: none; }
+
+        .footer-links li { margin-bottom: 12px; }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover { color: var(--saffron); }
+
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
         /* --- RESPONSIVE QUERIES --- */
         @media (max-width: 900px) {
             .vote-card { width: calc(50% - 25px); } 
