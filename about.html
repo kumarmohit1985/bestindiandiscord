@@ -54,17 +54,17 @@
         }
 
         .role-group-heading {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--white);
-            margin: 25px 0 15px;
+            margin: 25px 0 12px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .role-badge-pill {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             background: rgba(255, 153, 51, 0.15);
             border: 1px solid var(--saffron);
             color: var(--saffron);
@@ -73,61 +73,66 @@
             font-weight: 700;
         }
 
-        .discord-modal-grid {
+        /* Compact Pill Grid */
+        .pill-grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            gap: 14px;
         }
 
-        /* Discord Exact Desktop Profile Popout Modal */
-        .discord-popout-card {
-            background: #0b0b0c;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+        /* Pill-Shaped Leadership Card */
+        .discord-pill-card {
+            background: rgba(17, 18, 20, 0.85);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 18px 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
-            padding-bottom: 18px;
-            transition: transform 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .discord-popout-card:hover {
-            transform: translateY(-4px);
+        .discord-pill-card:hover {
+            transform: translateY(-2px);
             border-color: #5865F2;
+            box-shadow: 0 10px 28px rgba(88, 101, 242, 0.2);
         }
 
-        .discord-popout-banner {
-            height: 105px;
+        /* Subtle Ambient Banner Gradient inside the Pill */
+        .pill-ambient-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            background-size: cover;
-            background-position: center;
-            background-color: #1e1f22;
+            height: 100%;
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 0;
         }
-        .banner-tojo { background: linear-gradient(135deg, #FF416C, #FF4B2B); }
-        .banner-riddler { background: linear-gradient(135deg, #111111, #1e1f22); }
-        .banner-storm { background: linear-gradient(135deg, #0d324d, #7f5a83); }
-        .banner-jeet { background: linear-gradient(135deg, #1f4037, #99f2c8); }
+        .banner-tojo { background: linear-gradient(90deg, #FF416C, #FF4B2B); }
+        .banner-riddler { background: linear-gradient(90deg, #8A2387, #E94057, #F27121); }
+        .banner-storm { background: linear-gradient(90deg, #11998e, #38ef7d); }
+        .banner-jeet { background: linear-gradient(90deg, #2193b0, #6dd5ed); }
 
-        .popout-avatar-row {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 0 16px;
-            margin-top: -45px;
-            margin-bottom: 12px;
-        }
-
-        .avatar-frame {
+        /* Left Avatar Container */
+        .pill-avatar-wrap {
             position: relative;
-            width: 82px;
-            height: 82px;
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
             border-radius: 50%;
-            background: #0b0b0c;
-            padding: 6px;
+            background: #18191c;
+            padding: 2px;
             box-sizing: border-box;
+            z-index: 1;
         }
 
-        .avatar-img {
+        .pill-avatar-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
@@ -136,137 +141,88 @@
             display: block;
         }
 
-        .status-dot-badge {
+        .pill-status-dot {
             position: absolute;
-            bottom: 6px;
-            right: 6px;
-            width: 16px;
-            height: 16px;
-            background: #80848e; /* Default offline grey */
+            bottom: 1px;
+            right: 1px;
+            width: 13px;
+            height: 13px;
+            background-color: #80848e; /* Default offline */
             border-radius: 50%;
-            border: 3px solid #0b0b0c;
+            border: 2px solid #111214;
             transition: background-color 0.3s ease;
         }
 
-        .custom-status-bubble {
-            background: #1e1f22;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 6px 12px;
-            font-size: 0.78rem;
-            color: #dbdee1;
-            display: inline-flex;
+        /* Center Details */
+        .pill-info {
+            flex: 1;
+            min-width: 0;
+            z-index: 1;
+        }
+
+        .pill-name-row {
+            display: flex;
             align-items: center;
             gap: 6px;
-            max-width: 180px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-bottom: 6px;
         }
 
-        .popout-inner-body {
-            padding: 0 18px;
-        }
-
-        .display-name-text {
-            font-size: 1.25rem;
+        .pill-display-name {
+            font-size: 0.98rem;
             font-weight: 800;
             color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 2px;
         }
 
-        .handle-and-badges {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
+        .pill-handle {
+            font-size: 0.78rem;
             color: #949ba4;
             font-weight: 600;
-            margin-bottom: 12px;
         }
 
-        .badge-icons {
-            display: inline-flex;
-            gap: 4px;
-            font-size: 0.95rem;
-        }
-
-        .activity-box {
-            background: #111214;
-            border-radius: 10px;
-            padding: 9px 12px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: #b5bac1;
-            font-weight: 600;
-        }
-
-        .game-icons {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.88rem;
-        }
-
-        .more-games-pill {
-            background: #2b2d31;
-            color: #dbdee1;
-            font-size: 0.72rem;
-            padding: 2px 5px;
-            border-radius: 4px;
+        .pill-role-badge {
+            font-size: 0.65rem;
             font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 3px;
         }
 
-        .roles-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 14px;
+        .role-owner {
+            background: rgba(255, 153, 51, 0.2);
+            color: var(--saffron);
+            border: 1px solid rgba(255, 153, 51, 0.4);
         }
 
-        .role-pill {
-            background: #18191c;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            padding: 4px 8px;
-            font-size: 0.75rem;
-            color: #dbdee1;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+        .role-coowner {
+            background: rgba(168, 85, 247, 0.2);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.4);
         }
 
-        .role-circle-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-        }
-
-        .modal-action-btn {
-            display: block;
-            width: 100%;
+        /* Right Action Button */
+        .pill-action-btn {
             background: #2b2d31;
             color: #f2f3f5;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 9px;
-            border-radius: 8px;
-            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
             font-weight: 700;
-            text-align: center;
             text-decoration: none;
             cursor: pointer;
-            box-sizing: border-box;
+            white-space: nowrap;
             transition: all 0.2s ease;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .modal-action-btn:hover {
+        .pill-action-btn:hover {
             background: #5865F2;
             color: #ffffff;
         }
@@ -292,7 +248,7 @@
         <h1>About TheIndia</h1>
         <p class="subtitle">A digital <b>Adda</b> founded on the timeless philosophy of <i>Vasudhaiva Kutumbakam</i>—the world is one family.</p>
 
-        <!-- TOP LEADERSHIP SECTION -->
+        <!-- TOP COMPACT PILL LEADERSHIP SECTION -->
         <section class="leadership-wrapper">
             <span class="section-header-tag">Official Community Administration</span>
 
@@ -301,170 +257,80 @@
                 👑 Server Owners <span class="role-badge-pill">Founders</span>
             </div>
 
-            <div class="discord-modal-grid">
-                <!-- Riddler Popout Modal -->
-                <div class="discord-popout-card" id="card-565739284922105863">
-                    <div class="discord-popout-banner banner-riddler" id="banner-565739284922105863"></div>
-                    <div class="popout-avatar-row">
-                        <div class="avatar-frame">
-                            <img src="https://cdn.discordapp.com/embed/avatars/1.png" id="avatar-565739284922105863" alt="Riddler Avatar" class="avatar-img">
-                            <div class="status-dot-badge" id="status-565739284922105863" title="Connecting..."></div>
-                        </div>
-                        <div class="custom-status-bubble" id="bubble-565739284922105863" title="Discord Status">
-                            <span>💭</span> <span id="text-565739284922105863">Just finished reading...</span>
-                        </div>
+            <div class="pill-grid-container">
+                <!-- Tojo Pill -->
+                <div class="discord-pill-card" id="card-1201201235424985208">
+                    <div class="pill-ambient-banner banner-tojo"></div>
+                    <div class="pill-avatar-wrap">
+                        <img src="https://cdn.discordapp.com/embed/avatars/0.png" id="avatar-1201201235424985208" alt="Tojo" class="pill-avatar-img">
+                        <div class="pill-status-dot" id="status-1201201235424985208" title="Checking status..."></div>
                     </div>
-                    <div class="popout-inner-body">
-                        <div class="display-name-text" id="name-565739284922105863">! riddler ? 📝</div>
-                        <div class="handle-and-badges">
-                            <span>ridddler.ly</span>
-                            <span>•</span>
-                            <span class="badge-icons">❤️ 🛡️ 💎 🌿 🔮</span>
+                    <div class="pill-info">
+                        <div class="pill-name-row">
+                            <span class="pill-display-name" id="name-1201201235424985208">Tojo</span>
+                            <span class="pill-handle">@x._tf.tojo</span>
                         </div>
-
-                        <div class="activity-box">
-                            <span id="act-label-565739284922105863">Game Collection</span>
-                            <div class="game-icons">
-                                <span>🎯</span>
-                                <span>🚗</span>
-                                <span>🚀</span>
-                                <span class="more-games-pill">+14</span>
-                            </div>
-                        </div>
-
-                        <div class="roles-list">
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #ff5722;"></span> 🍁 The High Table</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #5865F2;"></span> discord.gg/theindia</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #a855f7;"></span> Server Owner</span>
-                        </div>
-
-                        <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="modal-action-btn">View Discord Profile ↗</a>
+                        <span class="pill-role-badge role-owner">Founder & Owner</span>
                     </div>
+                    <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="pill-action-btn">Profile ↗</a>
                 </div>
 
-                <!-- Tojo Popout Modal -->
-                <div class="discord-popout-card" id="card-1201201235424985208">
-                    <div class="discord-popout-banner banner-tojo" id="banner-1201201235424985208"></div>
-                    <div class="popout-avatar-row">
-                        <div class="avatar-frame">
-                            <img src="https://cdn.discordapp.com/embed/avatars/0.png" id="avatar-1201201235424985208" alt="Tojo Avatar" class="avatar-img">
-                            <div class="status-dot-badge" id="status-1201201235424985208" title="Connecting..."></div>
-                        </div>
-                        <div class="custom-status-bubble" id="bubble-1201201235424985208" title="Discord Status">
-                            <span>💻</span> <span id="text-1201201235424985208">Building TheIndia 2026...</span>
-                        </div>
+                <!-- Riddler Pill -->
+                <div class="discord-pill-card" id="card-565739284922105863">
+                    <div class="pill-ambient-banner banner-riddler"></div>
+                    <div class="pill-avatar-wrap">
+                        <img src="https://cdn.discordapp.com/embed/avatars/1.png" id="avatar-565739284922105863" alt="Riddler" class="pill-avatar-img">
+                        <div class="pill-status-dot" id="status-565739284922105863" title="Checking status..."></div>
                     </div>
-                    <div class="popout-inner-body">
-                        <div class="display-name-text" id="name-1201201235424985208">Tojo 👑</div>
-                        <div class="handle-and-badges">
-                            <span>x._tf.tojo</span>
-                            <span>•</span>
-                            <span class="badge-icons">👑 🇮🇳 ⚡ 💎 🌟</span>
+                    <div class="pill-info">
+                        <div class="pill-name-row">
+                            <span class="pill-display-name" id="name-565739284922105863">Riddler</span>
+                            <span class="pill-handle">@ridddler.ly</span>
                         </div>
-
-                        <div class="activity-box">
-                            <span id="act-label-1201201235424985208">Game Collection</span>
-                            <div class="game-icons">
-                                <span>🎯</span>
-                                <span>⚔️</span>
-                                <span>🎮</span>
-                                <span class="more-games-pill">+9</span>
-                            </div>
-                        </div>
-
-                        <div class="roles-list">
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #ff9933;"></span> Founder</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #5865F2;"></span> Architect</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #22c55e;"></span> discord.gg/theindia</span>
-                        </div>
-
-                        <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="modal-action-btn">View Discord Profile ↗</a>
+                        <span class="pill-role-badge role-owner">Founder & Owner</span>
                     </div>
+                    <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="pill-action-btn">Profile ↗</a>
                 </div>
             </div>
 
             <!-- 2. SERVER CO-OWNERS -->
-            <div class="role-group-heading" style="margin-top: 35px;">
+            <div class="role-group-heading" style="margin-top: 25px;">
                 🛡️ Server Co-Owners <span class="role-badge-pill" style="border-color: #c084fc; color: #c084fc; background: rgba(168,85,247,0.15);">Executive Staff</span>
             </div>
 
-            <div class="discord-modal-grid">
-                <!-- Storm breaker Popout Modal -->
-                <div class="discord-popout-card" id="card-1303344617848311863">
-                    <div class="discord-popout-banner banner-storm" id="banner-1303344617848311863"></div>
-                    <div class="popout-avatar-row">
-                        <div class="avatar-frame">
-                            <img src="https://cdn.discordapp.com/embed/avatars/2.png" id="avatar-1303344617848311863" alt="Storm breaker Avatar" class="avatar-img">
-                            <div class="status-dot-badge" id="status-1303344617848311863" title="Connecting..."></div>
-                        </div>
-                        <div class="custom-status-bubble" id="bubble-1303344617848311863">
-                            <span>🎙️</span> <span id="text-1303344617848311863">Active in Hindi VC...</span>
-                        </div>
+            <div class="pill-grid-container">
+                <!-- Storm breaker Pill -->
+                <div class="discord-pill-card" id="card-1303344617848311863">
+                    <div class="pill-ambient-banner banner-storm"></div>
+                    <div class="pill-avatar-wrap">
+                        <img src="https://cdn.discordapp.com/embed/avatars/2.png" id="avatar-1303344617848311863" alt="Storm breaker" class="pill-avatar-img">
+                        <div class="pill-status-dot" id="status-1303344617848311863" title="Checking status..."></div>
                     </div>
-                    <div class="popout-inner-body">
-                        <div class="display-name-text" id="name-1303344617848311863">Storm breaker 🌪️</div>
-                        <div class="handle-and-badges">
-                            <span>shazaesthetics</span>
-                            <span>•</span>
-                            <span class="badge-icons">🛡️ ⚡ 🎮 💎</span>
+                    <div class="pill-info">
+                        <div class="pill-name-row">
+                            <span class="pill-display-name" id="name-1303344617848311863">Storm breaker</span>
+                            <span class="pill-handle">@shazaesthetics</span>
                         </div>
-
-                        <div class="activity-box">
-                            <span id="act-label-1303344617848311863">Game Collection</span>
-                            <div class="game-icons">
-                                <span>🎯</span>
-                                <span>🔫</span>
-                                <span>🚗</span>
-                                <span class="more-games-pill">+11</span>
-                            </div>
-                        </div>
-
-                        <div class="roles-list">
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #c084fc;"></span> Co-Owner</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #38ef7d;"></span> VC Coordinator</span>
-                        </div>
-
-                        <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="modal-action-btn">View Discord Profile ↗</a>
+                        <span class="pill-role-badge role-coowner">Server Co-Owner</span>
                     </div>
+                    <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="pill-action-btn">Profile ↗</a>
                 </div>
 
-                <!-- Jeet Popout Modal -->
-                <div class="discord-popout-card" id="card-1515919444776325210">
-                    <div class="discord-popout-banner banner-jeet" id="banner-1515919444776325210"></div>
-                    <div class="popout-avatar-row">
-                        <div class="avatar-frame">
-                            <img src="https://cdn.discordapp.com/embed/avatars/3.png" id="avatar-1515919444776325210" alt="Jeet Avatar" class="avatar-img">
-                            <div class="status-dot-badge" id="status-1515919444776325210" title="Connecting..."></div>
-                        </div>
-                        <div class="custom-status-bubble" id="bubble-1515919444776325210">
-                            <span>🎬</span> <span id="text-1515919444776325210">Hosting Movie Stream...</span>
-                        </div>
+                <!-- Jeet Pill -->
+                <div class="discord-pill-card" id="card-1515919444776325210">
+                    <div class="pill-ambient-banner banner-jeet"></div>
+                    <div class="pill-avatar-wrap">
+                        <img src="https://cdn.discordapp.com/embed/avatars/3.png" id="avatar-1515919444776325210" alt="Jeet" class="pill-avatar-img">
+                        <div class="pill-status-dot" id="status-1515919444776325210" title="Checking status..."></div>
                     </div>
-                    <div class="popout-inner-body">
-                        <div class="display-name-text" id="name-1515919444776325210">Jeet ✨</div>
-                        <div class="handle-and-badges">
-                            <span>jeet_4160</span>
-                            <span>•</span>
-                            <span class="badge-icons">🎯 ✨ 🎬 💎</span>
+                    <div class="pill-info">
+                        <div class="pill-name-row">
+                            <span class="pill-display-name" id="name-1515919444776325210">Jeet</span>
+                            <span class="pill-handle">@jeet_4160</span>
                         </div>
-
-                        <div class="activity-box">
-                            <span id="act-label-1515919444776325210">Game Collection</span>
-                            <div class="game-icons">
-                                <span>🎬</span>
-                                <span>🍿</span>
-                                <span>🎮</span>
-                                <span class="more-games-pill">+8</span>
-                            </div>
-                        </div>
-
-                        <div class="roles-list">
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #c084fc;"></span> Co-Owner</span>
-                            <span class="role-pill"><span class="role-circle-dot" style="background: #00c6ff;"></span> Event Lead</span>
-                        </div>
-
-                        <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="modal-action-btn">View Discord Profile ↗</a>
+                        <span class="pill-role-badge role-coowner">Server Co-Owner</span>
                     </div>
+                    <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="pill-action-btn">Profile ↗</a>
                 </div>
             </div>
 
@@ -530,32 +396,56 @@
         <div class="footer-bottom">&copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.</div>
     </footer>
 
-    <!-- Real-Time Discord Leadership Fetcher (Lanyard + Guild Widget Fallback) -->
+    <!-- Dual Fetcher: Lanyard API + Server Widget Fallback -->
     <script>
         const LEADERSHIP_IDS = [
-            '565739284922105863',   // Riddler
             '1201201235424985208',  // Tojo
+            '565739284922105863',   // Riddler
             '1303344617848311863',  // Storm breaker
             '1515919444776325210'   // Jeet
         ];
         const GUILD_ID = '966912718902796359';
 
-        async function updateDiscordLeadership() {
-            // 1. Try Lanyard REST Endpoint
-            for (const userId of LEADERSHIP_IDS) {
+        async function updatePills() {
+            // 1. Fetch from Lanyard REST API
+            for (const id of LEADERSHIP_IDS) {
                 try {
-                    const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+                    const res = await fetch(`https://api.lanyard.rest/v1/users/${id}`);
                     if (res.ok) {
                         const json = await res.json();
                         if (json.success && json.data) {
-                            applyLanyardData(userId, json.data);
-                            continue;
+                            const d = json.data;
+                            const u = d.discord_user;
+                            const avatarEl = document.getElementById(`avatar-${id}`);
+                            const nameEl = document.getElementById(`name-${id}`);
+                            const statusEl = document.getElementById(`status-${id}`);
+
+                            if (avatarEl && u.avatar) {
+                                const ext = u.avatar.startsWith('a_') ? 'gif' : 'png';
+                                avatarEl.src = `https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.${ext}?size=128`;
+                            }
+                            if (nameEl && u.global_name) nameEl.innerText = u.global_name;
+                            if (statusEl) {
+                                if (d.discord_status === 'online') {
+                                    statusEl.style.backgroundColor = '#23a55a';
+                                    statusEl.title = 'Online';
+                                } else if (d.discord_status === 'idle') {
+                                    statusEl.style.backgroundColor = '#f0b232';
+                                    statusEl.title = 'Idle';
+                                } else if (d.discord_status === 'dnd') {
+                                    statusEl.style.backgroundColor = '#f23f43';
+                                    statusEl.title = 'Do Not Disturb';
+                                } else {
+                                    statusEl.style.backgroundColor = '#80848e';
+                                    statusEl.title = 'Offline';
+                                }
+                            }
                         }
                     }
                 } catch(e) {}
             }
 
-            // 2. Fallback to Server Widget API for online members
+            // 2. Server Widget Fallback for active online users
             try {
                 const widgetRes = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?t=${Date.now()}`);
                 if (widgetRes.ok) {
@@ -565,14 +455,10 @@
                             if (LEADERSHIP_IDS.includes(member.id)) {
                                 const avatarEl = document.getElementById(`avatar-${member.id}`);
                                 const statusEl = document.getElementById(`status-${member.id}`);
-                                const actEl = document.getElementById(`act-label-${member.id}`);
                                 if (avatarEl && member.avatar_url) avatarEl.src = member.avatar_url;
                                 if (statusEl) {
                                     statusEl.style.backgroundColor = '#23a55a';
-                                    statusEl.title = 'Online in Server';
-                                }
-                                if (actEl && member.game) {
-                                    actEl.innerText = `Playing ${member.game.name}`;
+                                    statusEl.title = 'Online in TheIndia';
                                 }
                             }
                         });
@@ -581,57 +467,8 @@
             } catch(e) {}
         }
 
-        function applyLanyardData(userId, data) {
-            const u = data.discord_user;
-            const avatarEl = document.getElementById(`avatar-${userId}`);
-            const nameEl = document.getElementById(`name-${userId}`);
-            const statusEl = document.getElementById(`status-${userId}`);
-            const textEl = document.getElementById(`text-${userId}`);
-            const actEl = document.getElementById(`act-label-${userId}`);
-
-            // Live Avatar (Animated GIF if Nitro, PNG if static)
-            if (avatarEl && u.avatar) {
-                const ext = u.avatar.startsWith('a_') ? 'gif' : 'png';
-                avatarEl.src = `https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.${ext}?size=128`;
-            }
-
-            // Display Name
-            if (nameEl && u.global_name) {
-                nameEl.innerText = u.global_name;
-            }
-
-            // Status Indicator Color
-            if (statusEl) {
-                if (data.discord_status === 'online') {
-                    statusEl.style.backgroundColor = '#23a55a';
-                    statusEl.title = 'Online';
-                } else if (data.discord_status === 'idle') {
-                    statusEl.style.backgroundColor = '#f0b232';
-                    statusEl.title = 'Idle';
-                } else if (data.discord_status === 'dnd') {
-                    statusEl.style.backgroundColor = '#f23f43';
-                    statusEl.title = 'Do Not Disturb';
-                } else {
-                    statusEl.style.backgroundColor = '#80848e';
-                    statusEl.title = 'Offline';
-                }
-            }
-
-            // Custom Status Text (if set by user)
-            const customActivity = data.activities ? data.activities.find(a => a.type === 4) : null;
-            if (textEl && customActivity && customActivity.state) {
-                textEl.innerText = customActivity.state;
-            }
-
-            // Live Playing / Listening Activity
-            const gameActivity = data.activities ? data.activities.find(a => a.type === 0 || a.type === 2) : null;
-            if (actEl && gameActivity) {
-                actEl.innerText = (gameActivity.type === 2 ? '🎧 Listening to ' : '🎮 Playing ') + gameActivity.name;
-            }
-        }
-
-        updateDiscordLeadership();
-        setInterval(updateDiscordLeadership, 25000);
+        updatePills();
+        setInterval(updatePills, 25000);
     </script>
 
 </body>
