@@ -323,7 +323,7 @@ h1 {
 .perk-card {
     background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid #f47fff; /* Discord Nitro Pink/Purple */
+    border-top: 3px solid #f47fff;
     padding: 25px;
     border-radius: 16px;
     backdrop-filter: blur(12px);
@@ -418,6 +418,11 @@ h1 {
     flex-grow: 1;
 }
 
+/* Mobile Sticky Bottom CTA Bar */
+.mobile-sticky-cta {
+    display: none; /* Hidden on desktop screens */
+}
+
 /* Transparent Glass Footer */
 footer {
     background: rgba(0, 0, 0, 0.35);
@@ -485,8 +490,12 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive Rules */
+/* Responsive Rules & Mobile Sticky Bar */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 70px; /* Space for the sticky bar */
+    }
+
     nav {
         flex-direction: column;
         gap: 15px;
@@ -508,5 +517,43 @@ footer {
 
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile Sticky CTA Bar Display */
+    .mobile-sticky-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px 20px;
+        background: rgba(8, 8, 8, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 9999;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-sticky-cta .mobile-brand {
+        color: var(--white);
+        font-weight: 800;
+        font-size: 0.95rem;
+    }
+
+    .mobile-sticky-cta .mobile-brand span {
+        color: var(--saffron);
+    }
+
+    .mobile-sticky-cta .mobile-btn {
+        background-color: var(--discord);
+        color: var(--white);
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.88rem;
+        box-shadow: 0 4px 12px rgba(88, 101, 242, 0.4);
     }
 }
