@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     
-    /* High-Visibility Animated Background (Reduced tint from 88% down to 45%) */
+    /* High-Visibility Animated Background */
     background: 
         linear-gradient(rgba(8, 8, 8, 0.45), rgba(8, 8, 8, 0.45)),
         url('background.webp') no-repeat center center fixed;
@@ -32,14 +32,15 @@ body {
     background-color: var(--primary-bg);
 }
 
-/* Navigation */
+/* Transparent Glass Header / Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: rgba(8, 8, 8, 0.82);
-    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: sticky;
     top: 0;
@@ -284,14 +285,15 @@ h1 {
     flex-grow: 1;
 }
 
-/* Footer */
+/* Transparent Glass Footer */
 footer {
-    background: rgba(4, 4, 4, 0.9);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 50px 8% 20px;
     margin-top: auto;
     text-align: left;
-    backdrop-filter: blur(15px);
 }
 
 .footer-content {
