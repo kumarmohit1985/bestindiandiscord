@@ -37,199 +37,210 @@
     </script>
     
     <style>
-        /* Leadership Profile Cards Styling */
-        .leadership-section {
+        .leadership-wrapper {
             max-width: 900px;
-            margin: 30px auto 50px;
+            margin: 20px auto 45px;
             text-align: left;
         }
 
-        .role-group-title {
+        .section-header-tag {
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .role-group-heading {
             font-size: 1.4rem;
             font-weight: 800;
             color: var(--white);
-            margin: 30px 0 15px;
+            margin: 25px 0 15px;
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
         }
 
-        .role-group-title span {
-            font-size: 0.85rem;
+        .role-badge-pill {
+            font-size: 0.75rem;
             background: rgba(255, 153, 51, 0.15);
             border: 1px solid var(--saffron);
             color: var(--saffron);
-            padding: 3px 10px;
+            padding: 2px 10px;
             border-radius: 50px;
             font-weight: 700;
         }
 
-        .discord-profile-grid {
+        .profile-grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .discord-profile-card {
-            background: #111214;
-            border-radius: 18px;
+        .discord-user-card {
+            background: #18191c;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(14px);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
             position: relative;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
-        .discord-profile-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--saffron);
+        .discord-user-card:hover {
+            transform: translateY(-4px);
+            border-color: #5865F2;
         }
 
-        /* Discord Banner */
-        .profile-banner {
-            height: 90px;
+        /* Banner Themes */
+        .discord-banner {
+            height: 85px;
             width: 100%;
-            position: relative;
+            background-size: cover;
+            background-position: center;
         }
 
         .banner-tojo {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: linear-gradient(135deg, #FF512F, #DD2476);
         }
 
         .banner-riddler {
-            background: linear-gradient(135deg, #7F00FF, #E100FF);
+            background: linear-gradient(135deg, #8A2387, #E94057, #F27121);
         }
 
         .banner-storm {
-            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
         }
 
         .banner-jeet {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
         }
 
         /* Avatar Container */
-        .profile-avatar-wrap {
+        .discord-avatar-wrapper {
             position: absolute;
             top: 45px;
-            left: 20px;
-            width: 80px;
-            height: 80px;
+            left: 18px;
+            width: 76px;
+            height: 76px;
             border-radius: 50%;
-            background: #111214;
-            padding: 6px;
+            background: #18191c;
+            padding: 5px;
             box-sizing: border-box;
         }
 
-        .profile-avatar {
+        .discord-avatar-img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: #2b2d31;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #fff;
             object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: #2f3136;
+            display: block;
         }
 
-        .online-indicator {
+        .discord-status-dot {
             position: absolute;
-            bottom: 6px;
-            right: 6px;
+            bottom: 5px;
+            right: 5px;
             width: 16px;
             height: 16px;
             background-color: #23a55a;
             border-radius: 50%;
-            border: 3px solid #111214;
+            border: 3px solid #18191c;
         }
 
-        /* Profile Body */
-        .profile-body {
-            padding: 50px 20px 20px;
+        /* Card Content */
+        .discord-card-content {
+            padding: 46px 18px 18px;
         }
 
-        .profile-display-name {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #f2f3f5;
+        .discord-name-row {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+            margin-bottom: 2px;
         }
 
-        .profile-badge {
-            font-size: 0.8rem;
+        .discord-global-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
         }
 
-        .profile-username {
-            font-size: 0.88rem;
-            color: #949ba4;
-            margin-bottom: 12px;
+        .discord-badges {
+            display: flex;
+            gap: 5px;
+        }
+
+        .discord-tag {
+            font-size: 0.85rem;
+            color: #b5bac1;
             font-weight: 600;
+            margin-bottom: 10px;
         }
 
-        .profile-badge-tag {
+        .discord-role-tag {
             display: inline-block;
             font-size: 0.72rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 15px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 12px;
         }
 
-        .badge-owner {
+        .role-owner {
             background: rgba(255, 153, 51, 0.2);
             color: var(--saffron);
             border: 1px solid rgba(255, 153, 51, 0.4);
         }
 
-        .badge-coowner {
-            background: rgba(147, 51, 234, 0.2);
+        .role-coowner {
+            background: rgba(168, 85, 247, 0.2);
             color: #c084fc;
-            border: 1px solid rgba(147, 51, 234, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.4);
         }
 
-        .profile-bio {
-            font-size: 0.88rem;
-            color: #dbdee1;
-            line-height: 1.5;
-            margin-bottom: 18px;
-            background: rgba(0, 0, 0, 0.25);
-            padding: 10px 12px;
+        .discord-about-box {
+            background: #111214;
             border-radius: 8px;
-            border-left: 3px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            color: #dbdee1;
+            line-height: 1.45;
+            margin-bottom: 14px;
+            border-left: 3px solid rgba(255, 255, 255, 0.15);
         }
 
-        .profile-actions {
+        .discord-card-actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .profile-btn {
+        .discord-action-btn {
             flex: 1;
             background: #2b2d31;
             color: #f2f3f5;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.82rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
             text-align: center;
             text-decoration: none;
             transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
         }
 
-        .profile-btn:hover {
-            background: var(--discord);
-            color: #fff;
+        .discord-action-btn:hover {
+            background: #5865F2;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -249,98 +260,123 @@
     </nav>
 
     <main class="container">
-        <span class="namaste">Our Story & Leadership</span>
+        <span class="namaste">Leadership & Mission</span>
         <h1>About TheIndia</h1>
         <p class="subtitle">A digital <b>Adda</b> founded on the timeless philosophy of <i>Vasudhaiva Kutumbakam</i>—the world is one family.</p>
 
-        <!-- SERVER LEADERSHIP SECTION (PLACED ON TOP) -->
-        <section class="leadership-section">
-            
-            <!-- SECTION 1: SERVER OWNERS -->
-            <div class="role-group-title">
-                👑 Server Owners <span>Founders & Leadership</span>
+        <!-- TOP LEADERSHIP SECTION -->
+        <section class="leadership-wrapper">
+            <span class="section-header-tag">Official Community Administration</span>
+
+            <!-- 1. SERVER OWNERS -->
+            <div class="role-group-heading">
+                👑 Server Owners <span class="role-badge-pill">Founders</span>
             </div>
 
-            <div class="discord-profile-grid">
-                <!-- Owner 1: Tojo -->
-                <div class="discord-profile-card">
-                    <div class="profile-banner banner-tojo"></div>
-                    <div class="profile-avatar-wrap">
-                        <div class="profile-avatar">👑</div>
-                        <div class="online-indicator" title="Online"></div>
+            <div class="profile-grid-container">
+                <!-- Tojo -->
+                <div class="discord-user-card">
+                    <div class="discord-banner banner-tojo"></div>
+                    <div class="discord-avatar-wrapper">
+                        <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Tojo Discord PFP" class="discord-avatar-img">
+                        <div class="discord-status-dot" title="Online"></div>
                     </div>
-                    <div class="profile-body">
-                        <div class="profile-display-name">Tojo <span class="profile-badge">🇮🇳</span></div>
-                        <div class="profile-username">x._tf.tojo</div>
-                        <span class="profile-badge-tag badge-owner">Server Founder / Owner</span>
-                        <div class="profile-bio">Lead server architect, designer, and community vision manager for TheIndia ecosystem.</div>
-                        <div class="profile-actions">
-                            <button type="button" class="profile-btn" onclick="copyDiscordTag('@tojo', this)">📋 Copy Tag</button>
-                            <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="profile-btn">Message in VC ↗</a>
+                    <div class="discord-card-content">
+                        <div class="discord-name-row">
+                            <div class="discord-global-name">Tojo</div>
+                            <div class="discord-badges">👑 🇮🇳</div>
+                        </div>
+                        <div class="discord-tag">@tojo</div>
+                        <span class="discord-role-tag role-owner">Server Founder & Owner</span>
+                        <div class="discord-about-box">
+                            Lead community architect, website designer, and server strategist for TheIndia digital Adda.
+                        </div>
+                        <div class="discord-card-actions">
+                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@tojo', this)">📋 Copy Tag</button>
+                            <!-- Replace TOJO_USER_ID with Tojo's numeric Discord ID if available -->
+                            <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Owner 2: Riddler -->
-                <div class="discord-profile-card">
-                    <div class="profile-banner banner-riddler"></div>
-                    <div class="profile-avatar-wrap">
-                        <div class="profile-avatar">⚡</div>
-                        <div class="online-indicator" title="Online"></div>
+                <!-- Riddler -->
+                <div class="discord-user-card">
+                    <div class="discord-banner banner-riddler"></div>
+                    <div class="discord-avatar-wrapper">
+                        <img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Riddler Discord PFP" class="discord-avatar-img">
+                        <div class="discord-status-dot" title="Online"></div>
                     </div>
-                    <div class="profile-body">
-                        <div class="profile-display-name">Riddler <span class="profile-badge">🔥</span></div>
-                        <div class="profile-username">riddler.ly</div>
-                        <span class="profile-badge-tag badge-owner">Server Founder / Owner</span>
-                        <div class="profile-bio">Operations lead, bot developer, event coordinator, and head moderation manager.</div>
-                        <div class="profile-actions">
-                            <button type="button" class="profile-btn" onclick="copyDiscordTag('@riddler', this)">📋 Copy Tag</button>
-                            <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="profile-btn">Message in VC ↗</a>
+                    <div class="discord-card-content">
+                        <div class="discord-name-row">
+                            <div class="discord-global-name">Riddler</div>
+                            <div class="discord-badges">⚡ 🔥</div>
+                        </div>
+                        <div class="discord-tag">@riddler</div>
+                        <span class="discord-role-tag role-owner">Server Founder & Owner</span>
+                        <div class="discord-about-box">
+                            Operations head, automod developer, event host, and overall server coordinator.
+                        </div>
+                        <div class="discord-card-actions">
+                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@riddler', this)">📋 Copy Tag</button>
+                            <!-- Replace RIDDLER_USER_ID with Riddler's numeric Discord ID if available -->
+                            <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SECTION 2: SERVER CO-OWNERS -->
-            <div class="role-group-title" style="margin-top: 40px;">
-                🛡️ Server Co-Owners <span>Executive Team</span>
+            <!-- 2. SERVER CO-OWNERS -->
+            <div class="role-group-heading" style="margin-top: 35px;">
+                🛡️ Server Co-Owners <span class="role-badge-pill" style="border-color: #c084fc; color: #c084fc; background: rgba(168,85,247,0.15);">Executive Staff</span>
             </div>
 
-            <div class="discord-profile-grid">
-                <!-- Co-Owner 1: Storm breaker -->
-                <div class="discord-profile-card">
-                    <div class="profile-banner banner-storm"></div>
-                    <div class="profile-avatar-wrap">
-                        <div class="profile-avatar">⚡</div>
-                        <div class="online-indicator" title="Online"></div>
+            <div class="profile-grid-container">
+                <!-- Storm breaker -->
+                <div class="discord-user-card">
+                    <div class="discord-banner banner-storm"></div>
+                    <div class="discord-avatar-wrapper">
+                        <img src="https://cdn.discordapp.com/embed/avatars/2.png" alt="Storm breaker Discord PFP" class="discord-avatar-img">
+                        <div class="discord-status-dot" title="Online"></div>
                     </div>
-                    <div class="profile-body">
-                        <div class="profile-display-name">Storm breaker <span class="profile-badge">🌪️</span></div>
-                        <div class="profile-username">shazaesthetics</div>
-                        <span class="profile-badge-tag badge-coowner">Server Co-Owner</span>
-                        <div class="profile-bio">Community oversight, member relations, voice channel activity, and gaming squads.</div>
-                        <div class="profile-actions">
-                            <button type="button" class="profile-btn" onclick="copyDiscordTag('@stormbreaker', this)">📋 Copy Tag</button>
-                            <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="profile-btn">Message in VC ↗</a>
+                    <div class="discord-card-content">
+                        <div class="discord-name-row">
+                            <div class="discord-global-name">Storm breaker</div>
+                            <div class="discord-badges">🌪️ 🛡️</div>
+                        </div>
+                        <div class="discord-tag">@stormbreaker</div>
+                        <span class="discord-role-tag role-coowner">Server Co-Owner</span>
+                        <div class="discord-about-box">
+                            Community oversight, voice lounge management, and gaming squad matchmaker.
+                        </div>
+                        <div class="discord-card-actions">
+                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@stormbreaker', this)">📋 Copy Tag</button>
+                            <!-- Replace STORMBREAKER_USER_ID with Storm breaker's numeric Discord ID if available -->
+                            <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Co-Owner 2: Jeet -->
-                <div class="discord-profile-card">
-                    <div class="profile-banner banner-jeet"></div>
-                    <div class="profile-avatar-wrap">
-                        <div class="profile-avatar">🎯</div>
-                        <div class="online-indicator" title="Online"></div>
+                <!-- Jeet -->
+                <div class="discord-user-card">
+                    <div class="discord-banner banner-jeet"></div>
+                    <div class="discord-avatar-wrapper">
+                        <img src="https://cdn.discordapp.com/embed/avatars/3.png" alt="Jeet Discord PFP" class="discord-avatar-img">
+                        <div class="discord-status-dot" title="Online"></div>
                     </div>
-                    <div class="profile-body">
-                        <div class="profile-display-name">Jeet <span class="profile-badge">✨</span></div>
-                        <div class="profile-username">jeet_4160</div>
-                        <span class="profile-badge-tag badge-coowner">Server Co-Owner</span>
-                        <div class="profile-bio">Events management, Bollywood watch parties coordinator, and community safety.</div>
-                        <div class="profile-actions">
-                            <button type="button" class="profile-btn" onclick="copyDiscordTag('@jeet', this)">📋 Copy Tag</button>
-                            <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="profile-btn">Message in VC ↗</a>
+                    <div class="discord-card-content">
+                        <div class="discord-name-row">
+                            <div class="discord-global-name">Jeet</div>
+                            <div class="discord-badges">✨ 🎯</div>
+                        </div>
+                        <div class="discord-tag">@jeet</div>
+                        <span class="discord-role-tag role-coowner">Server Co-Owner</span>
+                        <div class="discord-about-box">
+                            Bollywood watch parties, community events organizer, and user safety supervisor.
+                        </div>
+                        <div class="discord-card-actions">
+                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@jeet', this)">📋 Copy Tag</button>
+                            <!-- Replace JEET_USER_ID with Jeet's numeric Discord ID if available -->
+                            <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
                         </div>
                     </div>
                 </div>
@@ -348,7 +384,7 @@
 
         </section>
 
-        <!-- MISSION & STORY SECTION -->
+        <!-- MISSION & VALUE CARDS -->
         <div class="features" style="text-align: left; margin-bottom: 50px;">
             <div class="feature-card" style="width: 100%;">
                 <h3>🇮🇳 Why We Built TheIndia</h3>
@@ -408,10 +444,10 @@
         <div class="footer-bottom">&copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.</div>
     </footer>
 
-    <!-- Copy Discord Tag Helper Script -->
+    <!-- Copy Helper Script -->
     <script>
-        function copyDiscordTag(tag, btn) {
-            navigator.clipboard.writeText(tag).then(() => {
+        function copyUserHandle(handle, btn) {
+            navigator.clipboard.writeText(handle).then(() => {
                 const originalText = btn.innerText;
                 btn.innerText = "Copied! ✅";
                 btn.style.backgroundColor = "#23a55a";
@@ -422,7 +458,7 @@
                     btn.style.color = "";
                 }, 2000);
             }).catch(() => {
-                prompt("Copy Discord tag:", tag);
+                prompt("Copy Discord tag:", handle);
             });
         }
     </script>
