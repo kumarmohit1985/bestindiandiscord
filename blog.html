@@ -3,182 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Server Blog & News | TheIndia</title>
-    <meta name="description" content="Stay updated with the latest news, events, and gaming tournaments from TheIndia - the best Indian Discord community.">
+    <meta name="description" content="Stay updated with the latest news, events, guides, and tournaments from TheIndia - the best Indian Discord community.">
+    <meta name="keywords" content="indian discord blog, theindia news, discord guides india 2026">
+    <meta name="robots" content="index, follow">
     
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Blog & Community Guides | TheIndia">
+    <meta property="og:description" content="Latest news, guides, and server updates from TheIndia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bestindiandiscord.com/blog.html">
+    <meta property="og:image" content="https://cdn.discordapp.com/embed/avatars/0.png"> 
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- External Shared Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
+    <!-- Page Specific Blog Styles -->
     <style>
-        :root {
-            --bg-color: #080808;
-            --text-color: #ffffff;
-            --saffron: #FF9933;
-            --green: #138808;
-            --discord: #5865F2;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 0%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 100%, rgba(19, 136, 8, 0.08) 0%, transparent 40%);
-            padding-top: 120px;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .blog-image {
             width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(8, 8, 8, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            height: 200px;
+            object-fit: cover;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
-
-        .nav-brand { font-size: 1.5rem; font-weight: 800; color: var(--text-color); text-decoration: none; letter-spacing: 1px; }
-        .nav-brand span { color: var(--saffron); }
-        
-        .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-        .nav-links a { color: #e2e8f0; text-decoration: none; font-size: 1rem; font-weight: 600; transition: color 0.3s ease; }
-        .nav-links a:hover, .nav-links a.active { color: var(--saffron); }
-
-        .nav-links a.nav-btn {
-            background-color: var(--discord);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 800;
-            margin-left: 10px;
-            box-shadow: 0 4px 15px -5px var(--discord);
-        }
-
-        /* --- BLOG CONTENT --- */
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            padding: 40px 20px;
-            text-align: center;
+        .blog-info {
+            padding: 25px;
             flex-grow: 1;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #FF9933, #ffffff, #138808);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .blog-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            text-align: left;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
         }
-
-        .blog-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 153, 51, 0.3); }
-
-        .blog-image { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .blog-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .blog-date { color: var(--saffron); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; display: block; }
-        .blog-info h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-        .blog-info p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
-
-        .read-more { color: var(--text-color); text-decoration: none; font-weight: 800; font-size: 0.9rem; border-bottom: 2px solid var(--saffron); width: fit-content; transition: 0.3s; }
-        .read-more:hover { color: var(--saffron); letter-spacing: 1px; }
-
-        /* --- FOOTER --- */
-        footer {
-            background: rgba(8, 8, 8, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 60px 20px 20px;
-            width: 100%;
-            margin-top: auto;
-            backdrop-filter: blur(10px);
+        .blog-date {
+            color: var(--saffron);
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
         }
-
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            text-align: left;
+        .read-more {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--saffron);
+            width: fit-content;
+            transition: all 0.3s ease;
+            margin-top: 15px;
         }
-
-        .footer-brand h2 { font-size: 1.8rem; font-weight: 800; color: var(--text-color); margin-bottom: 15px; }
-        .footer-brand span { color: var(--saffron); }
-        .footer-brand p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; }
-        .footer-links h3 { color: #e2e8f0; margin-bottom: 20px; font-size: 1.2rem; position: relative; display: inline-block; }
-        .footer-links h3::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 30px; height: 2px; background: var(--saffron); }
-        .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.95rem; }
-        .footer-links a:hover { color: var(--saffron); }
-
-        .footer-bottom {
-            max-width: 1000px;
-            margin: 40px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            color: #64748b;
-            font-size: 0.85rem;
-        }
-
-        /* --- RESPONSIVE QUERIES --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .footer-content { grid-template-columns: 1fr; text-align: center; }
-            .footer-links h3::after { left: 50%; transform: translateX(-50%); }
-        }
-
-        @media (max-width: 600px) {
-            nav { flex-direction: column; padding: 15px; gap: 15px; }
-            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .nav-links a.nav-btn { margin-left: 0; width: 100%; text-align: center; }
-            body { padding-top: 180px; }
+        .read-more:hover {
+            color: var(--saffron);
+            letter-spacing: 0.5px;
         }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-850197482"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-850197482');
+    </script>
 </head>
 <body>
 
@@ -191,18 +82,18 @@
             <li><a href="live-status.html">Live Status</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="https://discord.gg/theindia" class="nav-btn">Join Server</a></li>
+            <li><a href="https://discord.gg/theindia" class="nav-btn" target="_blank" rel="noopener">Join Server</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Latest News</h1>
-        <p style="color:#94a3b8;">Stay updated with tournaments, events, and community stories from India's #1 digital adda.</p>
+        <span class="namaste">Updates & Guides</span>
+        <h1>Latest Articles</h1>
+        <p class="subtitle">Stay updated with gaming guides, community stories, and insights from India's #1 digital adda.</p>
 
         <div class="blog-grid">
-            <!-- UPDATED SEO MAGNET POST WITH IMAGE -->
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="TheIndia Community Hub" class="blog-image">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="TheIndia Community Hub" class="blog-image" loading="lazy">
                 <div class="blog-info">
                     <span class="blog-date">MAY 2026</span>
                     <h3>Why TheIndia is Rated the Best Indian Discord Server in 2026</h3>
@@ -211,9 +102,8 @@
                 </div>
             </article>
 
-            <!-- EXISTING POST 1 -->
             <article class="blog-card">
-                <img src="best_active_india_discord_servers.jpg" alt="Making Friends on Discord" class="blog-image">
+                <img src="best_active_india_discord_servers.jpg" alt="Making Friends on Discord" class="blog-image" loading="lazy">
                 <div class="blog-info">
                     <span class="blog-date">MAY 2026</span>
                     <h3>Why Discord Is the Best Place to Find New Friends in 2026</h3>
@@ -222,11 +112,10 @@
                 </div>
             </article>
 
-            <!-- EXISTING POST 2 -->
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=800&q=80" alt="Active Indian Discord Servers" class="blog-image">
+                <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=800&q=80" alt="Active Indian Discord Servers" class="blog-image" loading="lazy">
                 <div class="blog-info">
-                    <span class="blog-date">May 2026</span>
+                    <span class="blog-date">MAY 2026</span>
                     <h3>Best Active Indian Discord Servers (2026 List)</h3>
                     <p>Looking for active Desi communities? In this guide, we reveal the top Indian Discord servers for gaming, VCs, and making new friends.</p>
                     <a href="best-servers-2026.html" class="read-more">Read Full Guide →</a>
@@ -239,7 +128,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h2>The<span>India</span></h2>
-                <p>TheIndia is the #1 <strong>best Indian Discord server</strong> for gaming and chilling. Join our active community for BGMI, Valorant, and 24/7 voice chats. Experience the ultimate digital Adda in India.</p>
+                <p>TheIndia is the #1 <strong>Best Indian Discord server</strong> for gaming, making friends, and chilling. Join our active Desi community for BGMI, Valorant, Bollywood movie nights, and 24/7 toxic-free Hindi voice chats. Experience the ultimate digital Adda in India.</p>
             </div>
             
             <div class="footer-links">
@@ -257,7 +146,7 @@
             <div class="footer-links">
                 <h3>Community</h3>
                 <ul>
-                    <li><a href="https://discord.gg/theindia">Join Discord Server</a></li>
+                    <li><a href="https://discord.gg/theindia" target="_blank" rel="noopener">Join Discord Server</a></li>
                     <li><a href="contact.html">Contact Support</a></li>
                     <li><a href="mailto:officialtheindia@gmail.com">Business Inquiries</a></li>
                 </ul>
@@ -268,6 +157,5 @@
             &copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.
         </div>
     </footer>
-
 </body>
 </html>
