@@ -33,8 +33,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- External Shared Stylesheet (v9) -->
-    <link rel="stylesheet" href="style.css?v=9">
+    <!-- External Shared Stylesheet (v10) -->
+    <link rel="stylesheet" href="style.css?v=10">
 
     <!-- Google tag (gtag.js) - GA4 Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
@@ -265,12 +265,12 @@
                 const data = await response.json();
                 const count = data.presence_count || (data.members ? data.members.length : null);
                 if (count) {
-                    counterEl.innerText = `${count} Desis Chilling Online Right Now`;
+                    counterEl.innerText = `${count} Members Online Right Now`;
                 } else {
-                    counterEl.innerText = `Active Community Online`;
+                    counterEl.innerText = `Active Members Online`;
                 }
             } catch (err) {
-                counterEl.innerText = `Active Desis Online Now`;
+                counterEl.innerText = `Active Members Online Now`;
             }
         }
         updateHeroLiveCount();
