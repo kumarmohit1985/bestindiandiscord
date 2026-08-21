@@ -33,8 +33,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <!-- External Shared Stylesheet (v8) -->
-    <link rel="stylesheet" href="style.css?v=8">
+    <!-- External Shared Stylesheet (v9) -->
+    <link rel="stylesheet" href="style.css?v=9">
 
     <!-- Google tag (gtag.js) - GA4 Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
@@ -102,6 +102,14 @@
             <span class="pill">💎 Level 3 Boosted</span>
             <span class="pill">🛡️ Toxic-Free Space</span>
             <span class="pill">🎁 Daily Events</span>
+        </div>
+
+        <!-- Dynamic Real-Time Active Members Counter -->
+        <div>
+            <div class="live-counter-badge">
+                <span class="live-pulse-dot"></span>
+                <span id="hero-live-count">Connecting to Discord...</span>
+            </div>
         </div>
 
         <div class="button-group">
@@ -245,6 +253,29 @@
             &copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.
         </div>
     </footer>
+
+    <!-- Hero Live Counter Fetch Script -->
+    <script>
+        const GUILD_ID = '966912718902796359';
+        async function updateHeroLiveCount() {
+            const counterEl = document.getElementById('hero-live-count');
+            try {
+                const response = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?t=${Date.now()}`);
+                if (!response.ok) throw new Error('API Response Error');
+                const data = await response.json();
+                const count = data.presence_count || (data.members ? data.members.length : null);
+                if (count) {
+                    counterEl.innerText = `${count} Desis Chilling Online Right Now`;
+                } else {
+                    counterEl.innerText = `Active Community Online`;
+                }
+            } catch (err) {
+                counterEl.innerText = `Active Desis Online Now`;
+            }
+        }
+        updateHeroLiveCount();
+        setInterval(updateHeroLiveCount, 30000);
+    </script>
 
 </body>
 </html>
