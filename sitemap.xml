@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
+  <!-- Core Navigation Pages -->
   <url>
     <loc>https://bestindiandiscord.com/</loc>
     <lastmod>2026-05-04</lastmod>
     <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://bestindiandiscord.com/about.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://bestindiandiscord.com/blog.html</loc>
@@ -12,27 +17,27 @@
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://bestindiandiscord.com/faq.html</loc>
-    <lastmod>2026-05-04</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://bestindiandiscord.com/about.html</loc>
+    <loc>https://bestindiandiscord.com/live-status.html</loc>
     <lastmod>2026-05-04</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://bestindiandiscord.com/vote.html</loc>
+    <loc>https://bestindiandiscord.com/faq.html</loc>
     <lastmod>2026-05-04</lastmod>
-    <priority>0.70</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://bestindiandiscord.com/contact.html</loc>
     <lastmod>2026-05-04</lastmod>
     <priority>0.70</priority>
   </url>
+  <url>
+    <loc>https://bestindiandiscord.com/vote.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <priority>0.70</priority>
+  </url>
 
-  <!-- SEO Authority Pages -->
+  <!-- SEO Authority Guides -->
   <url>
     <loc>https://bestindiandiscord.com/best-indian-discord-server-2026.html</loc>
     <lastmod>2026-05-04</lastmod>
