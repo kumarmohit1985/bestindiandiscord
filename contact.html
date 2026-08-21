@@ -36,6 +36,46 @@
 
       gtag('config', 'G-XMBF3CRKPX');
     </script>
+    
+    <style>
+        .contact-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 153, 51, 0.15);
+            border: 1px solid var(--saffron);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .contact-action-btn:hover {
+            background: var(--saffron);
+            color: #000;
+            transform: translateY(-2px);
+        }
+        .email-copy-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--white);
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-top: 10px;
+        }
+        .email-copy-pill:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+    </style>
 </head>
 <body>
 
@@ -62,19 +102,21 @@
             <div class="feature-card" style="width: 100%;">
                 <h3>💬 Community Support</h3>
                 <p style="margin-bottom: 15px;">For instant help with roles, channels, or server navigation, open a ticket inside Discord.</p>
-                <a href="https://discord.gg/theindia" target="_blank" rel="noopener" style="color: var(--saffron); font-weight: 700; text-decoration: none;">Open Discord Ticket →</a>
+                <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="contact-action-btn">Open Discord Ticket →</a>
             </div>
 
             <div class="feature-card" style="width: 100%;">
                 <h3>🤝 Partnerships & Collabs</h3>
-                <p style="margin-bottom: 15px;">Looking to cross-promote, sponsor an event, or host a tournament with TheIndia?</p>
-                <a href="mailto:officialtheindia@gmail.com" style="color: var(--saffron); font-weight: 700; text-decoration: none;">Email Partnerships →</a>
+                <p style="margin-bottom: 12px;">Looking to cross-promote, sponsor an event, or host a tournament with TheIndia?</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=officialtheindia@gmail.com&su=Partnership%20Inquiry%20-%20TheIndia" target="_blank" rel="noopener" class="contact-action-btn">Compose in Gmail ↗</a>
+                <button type="button" class="email-copy-pill" onclick="copyEmail(this)">📋 Copy Email</button>
             </div>
 
             <div class="feature-card" style="width: 100%;">
                 <h3>🛡️ Report Unsafe Behavior</h3>
-                <p style="margin-bottom: 15px;">Report rule violations, harassment, or scam attempts directly to our head moderation team.</p>
-                <a href="mailto:officialtheindia@gmail.com?subject=Moderation%20Report" style="color: var(--saffron); font-weight: 700; text-decoration: none;">Report to Staff →</a>
+                <p style="margin-bottom: 12px;">Report rule violations, harassment, or scam attempts directly to our head moderation team.</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=officialtheindia@gmail.com&su=Moderation%20Report%20-%20TheIndia" target="_blank" rel="noopener" class="contact-action-btn">Compose in Gmail ↗</a>
+                <button type="button" class="email-copy-pill" onclick="copyEmail(this)">📋 Copy Email</button>
             </div>
         </div>
 
@@ -86,7 +128,7 @@
             <div style="background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid var(--saffron); border-radius: 16px; padding: 25px; backdrop-filter: blur(12px);">
                 <h3 style="color: var(--white); font-size: 1.2rem; margin-bottom: 12px;">How to Submit an Appeal:</h3>
                 <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                    Send an email to <a href="mailto:officialtheindia@gmail.com?subject=Ban%20Appeal%20-%20[Your%20Discord%20Tag]" style="color: var(--saffron); font-weight: 700;">officialtheindia@gmail.com</a> with the subject line <strong>"Ban Appeal - [Your Discord Username]"</strong> including the following details:
+                    Send an email to <strong style="color: var(--saffron);">officialtheindia@gmail.com</strong> with the subject line <strong>"Ban Appeal - [Your Discord Username]"</strong> including the following details:
                 </p>
                 
                 <ul style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; margin-left: 20px; margin-bottom: 20px;">
@@ -95,8 +137,15 @@
                     <li><strong>Why you believe the punishment should be reconsidered</strong> or what steps you have taken to ensure it won't happen again.</li>
                 </ul>
 
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="mailto:officialtheindia@gmail.com?subject=Ban%20Appeal%20-%20TheIndia&body=1.%20Discord%20Username%20%26%20ID:%0A2.%20Date%20of%20Ban:%0A3.%20Reason%20Provided:%0A4.%20Why%20should%20this%20appeal%20be%20accepted%3F:" class="cta-btn" style="padding: 10px 24px; font-size: 0.9rem;">Submit Ban Appeal via Email</a>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                    <!-- Direct Gmail Web Composer -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=officialtheindia@gmail.com&su=Ban%20Appeal%20-%20TheIndia&body=1.%20Discord%20Username%20%26%20User%20ID:%0A2.%20Date%20of%20Ban:%0A3.%20Reason%20Provided:%0A4.%20Why%20should%20this%20appeal%20be%20accepted%3F:" target="_blank" rel="noopener" class="cta-btn" style="padding: 10px 22px; font-size: 0.9rem;">Open Pre-filled Gmail Form ↗</a>
+                    
+                    <!-- Native Mail Client Fallback -->
+                    <a href="mailto:officialtheindia@gmail.com?subject=Ban%20Appeal%20-%20TheIndia&body=1.%20Discord%20Username%20%26%20ID:%0A2.%20Date%20of%20Ban:%0A3.%20Reason%20Provided:%0A4.%20Why%20should%20this%20appeal%20be%20accepted%3F:" class="cta-btn secondary" style="padding: 10px 20px; font-size: 0.9rem;">Open Default Mail App</a>
+
+                    <!-- Direct Copy Button -->
+                    <button type="button" class="email-copy-pill" onclick="copyEmail(this)" style="margin-top: 0; padding: 10px 18px;">📋 Copy Email Address</button>
                 </div>
             </div>
         </section>
@@ -143,6 +192,26 @@
             &copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.
         </div>
     </footer>
+
+    <!-- Universal Clipboard Copy Helper -->
+    <script>
+        function copyEmail(btn) {
+            const email = "officialtheindia@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = "✅ Copied to Clipboard!";
+                btn.style.borderColor = "#22c55e";
+                btn.style.color = "#4ade80";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
+                }, 2500);
+            }).catch(() => {
+                prompt("Copy our email address below:", email);
+            });
+        }
+    </script>
 
 </body>
 </html>
