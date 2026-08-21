@@ -73,53 +73,150 @@
             font-weight: 700;
         }
 
-        /* Widget Grid Container */
-        .widget-grid-container {
+        .discord-profile-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
         }
 
-        .discord-widget-box {
-            background: #111214;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 12px 12px 16px;
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .discord-widget-box:hover {
-            transform: translateY(-4px);
-            border-color: #5865F2;
-        }
-
-        .discord-iframe-widget {
-            width: 100%;
-            height: 170px;
-            border: none;
-            border-radius: 12px;
+        .discord-profile-card {
             background: #18191c;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .widget-action-row {
+        .discord-profile-card:hover {
+            transform: translateY(-3px);
+            border-color: #5865f2;
+        }
+
+        .profile-banner {
+            height: 90px;
             width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-tojo {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .banner-riddler {
+            background: linear-gradient(135deg, #8a2387, #e94057, #f27121);
+        }
+
+        .banner-storm {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        .banner-jeet {
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+        }
+
+        .profile-avatar-container {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            width: 76px;
+            height: 76px;
+            background: #18191c;
+            border-radius: 50%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .profile-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #2b2d31;
+            display: block;
+        }
+
+        .profile-content {
+            padding: 48px 20px 20px;
+        }
+
+        .profile-name-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+
+        .profile-display-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .profile-username {
+            font-size: 0.85rem;
+            color: #949ba4;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .profile-role-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .tag-owner {
+            background: rgba(255, 153, 51, 0.18);
+            color: var(--saffron);
+            border: 1px solid rgba(255, 153, 51, 0.4);
+        }
+
+        .tag-coowner {
+            background: rgba(168, 85, 247, 0.18);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+        }
+
+        .profile-id-box {
+            background: #111214;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #dbdee1;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-id-box code {
+            color: #e2e8f0;
+            font-family: monospace;
+            background: rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .profile-card-actions {
             display: flex;
             gap: 10px;
-            margin-top: 12px;
-            padding: 0 4px;
         }
 
-        .widget-btn {
+        .profile-btn {
             flex: 1;
             background: #2b2d31;
             color: #f2f3f5;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 8px 12px;
+            padding: 9px 12px;
             border-radius: 8px;
             font-size: 0.82rem;
             font-weight: 700;
@@ -133,18 +230,18 @@
             gap: 6px;
         }
 
-        .widget-btn:hover {
+        .profile-btn:hover {
             background: #5865F2;
             color: #ffffff;
         }
 
-        .widget-btn.primary {
-            background: rgba(255, 153, 51, 0.2);
+        .profile-btn.primary {
+            background: rgba(255, 153, 51, 0.18);
             border-color: var(--saffron);
             color: #fff;
         }
 
-        .widget-btn.primary:hover {
+        .profile-btn.primary:hover {
             background: var(--saffron);
             color: #000;
         }
@@ -170,7 +267,7 @@
         <h1>About TheIndia</h1>
         <p class="subtitle">A digital <b>Adda</b> founded on the timeless philosophy of <i>Vasudhaiva Kutumbakam</i>—the world is one family.</p>
 
-        <!-- TOP LEADERSHIP WIDGET SECTION -->
+        <!-- TOP LEADERSHIP SECTION -->
         <section class="leadership-wrapper">
             <span class="section-header-tag">Official Community Administration</span>
 
@@ -179,32 +276,52 @@
                 👑 Server Owners <span class="role-badge-pill">Founders</span>
             </div>
 
-            <div class="widget-grid-container">
-                <!-- Tojo Widget -->
-                <div class="discord-widget-box">
-                    <iframe 
-                        src="https://widgets.fayevr.dev/discord/user/1201201235424985208" 
-                        class="discord-iframe-widget" 
-                        loading="lazy"
-                        title="Tojo Discord Profile Widget">
-                    </iframe>
-                    <div class="widget-action-row">
-                        <button type="button" class="widget-btn" onclick="copyTag('x._tf.tojo', this)">📋 Copy Tag</button>
-                        <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
+            <div class="discord-profile-grid">
+                <!-- Tojo -->
+                <div class="discord-profile-card">
+                    <div class="profile-banner banner-tojo"></div>
+                    <div class="profile-avatar-container">
+                        <img src="https://cdn.discordapp.com/embed/avatars/0.png" id="avatar-tojo" alt="Tojo" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-name-row">
+                            <div class="profile-display-name">Tojo</div>
+                            <span>👑 🇮🇳</span>
+                        </div>
+                        <div class="profile-username">@x._tf.tojo</div>
+                        <span class="profile-role-tag tag-owner">Server Founder & Owner</span>
+                        <div class="profile-id-box">
+                            <span>User ID:</span>
+                            <code>1201201235424985208</code>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button type="button" class="profile-btn" onclick="copyText('x._tf.tojo', this)">📋 Copy Tag</button>
+                            <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="profile-btn primary">View Profile ↗</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Riddler Widget -->
-                <div class="discord-widget-box">
-                    <iframe 
-                        src="https://widgets.fayevr.dev/discord/user/565739284922105863" 
-                        class="discord-iframe-widget" 
-                        loading="lazy"
-                        title="Riddler Discord Profile Widget">
-                    </iframe>
-                    <div class="widget-action-row">
-                        <button type="button" class="widget-btn" onclick="copyTag('ridddler.ly', this)">📋 Copy Tag</button>
-                        <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
+                <!-- Riddler -->
+                <div class="discord-profile-card">
+                    <div class="profile-banner banner-riddler"></div>
+                    <div class="profile-avatar-container">
+                        <img src="https://cdn.discordapp.com/embed/avatars/1.png" id="avatar-riddler" alt="Riddler" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-name-row">
+                            <div class="profile-display-name">Riddler</div>
+                            <span>⚡ 🔥</span>
+                        </div>
+                        <div class="profile-username">@ridddler.ly</div>
+                        <span class="profile-role-tag tag-owner">Server Founder & Owner</span>
+                        <div class="profile-id-box">
+                            <span>User ID:</span>
+                            <code>565739284922105863</code>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button type="button" class="profile-btn" onclick="copyText('ridddler.ly', this)">📋 Copy Tag</button>
+                            <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="profile-btn primary">View Profile ↗</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,32 +331,52 @@
                 🛡️ Server Co-Owners <span class="role-badge-pill" style="border-color: #c084fc; color: #c084fc; background: rgba(168,85,247,0.15);">Executive Staff</span>
             </div>
 
-            <div class="widget-grid-container">
-                <!-- Storm breaker Widget -->
-                <div class="discord-widget-box">
-                    <iframe 
-                        src="https://widgets.fayevr.dev/discord/user/1303344617848311863" 
-                        class="discord-iframe-widget" 
-                        loading="lazy"
-                        title="Storm breaker Discord Profile Widget">
-                    </iframe>
-                    <div class="widget-action-row">
-                        <button type="button" class="widget-btn" onclick="copyTag('shazaesthetics', this)">📋 Copy Tag</button>
-                        <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
+            <div class="discord-profile-grid">
+                <!-- Storm breaker -->
+                <div class="discord-profile-card">
+                    <div class="profile-banner banner-storm"></div>
+                    <div class="profile-avatar-container">
+                        <img src="https://cdn.discordapp.com/embed/avatars/2.png" id="avatar-storm" alt="Storm breaker" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-name-row">
+                            <div class="profile-display-name">Storm breaker</div>
+                            <span>🌪️ 🛡️</span>
+                        </div>
+                        <div class="profile-username">@shazaesthetics</div>
+                        <span class="profile-role-tag tag-coowner">Server Co-Owner</span>
+                        <div class="profile-id-box">
+                            <span>User ID:</span>
+                            <code>1303344617848311863</code>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button type="button" class="profile-btn" onclick="copyText('shazaesthetics', this)">📋 Copy Tag</button>
+                            <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="profile-btn primary">View Profile ↗</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Jeet Widget -->
-                <div class="discord-widget-box">
-                    <iframe 
-                        src="https://widgets.fayevr.dev/discord/user/1515919444776325210" 
-                        class="discord-iframe-widget" 
-                        loading="lazy"
-                        title="Jeet Discord Profile Widget">
-                    </iframe>
-                    <div class="widget-action-row">
-                        <button type="button" class="widget-btn" onclick="copyTag('jeet_4160', this)">📋 Copy Tag</button>
-                        <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
+                <!-- Jeet -->
+                <div class="discord-profile-card">
+                    <div class="profile-banner banner-jeet"></div>
+                    <div class="profile-avatar-container">
+                        <img src="https://cdn.discordapp.com/embed/avatars/3.png" id="avatar-jeet" alt="Jeet" class="profile-avatar-img">
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-name-row">
+                            <div class="profile-display-name">Jeet</div>
+                            <span>✨ 🎯</span>
+                        </div>
+                        <div class="profile-username">@jeet_4160</div>
+                        <span class="profile-role-tag tag-coowner">Server Co-Owner</span>
+                        <div class="profile-id-box">
+                            <span>User ID:</span>
+                            <code>1515919444776325210</code>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button type="button" class="profile-btn" onclick="copyText('jeet_4160', this)">📋 Copy Tag</button>
+                            <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="profile-btn primary">View Profile ↗</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -308,19 +445,19 @@
 
     <!-- Universal Tag Copy Helper -->
     <script>
-        function copyTag(tag, btn) {
-            navigator.clipboard.writeText(tag).then(() => {
-                const originalText = btn.innerText;
+        function copyText(str, btn) {
+            navigator.clipboard.writeText(str).then(() => {
+                const original = btn.innerText;
                 btn.innerText = "Copied! ✅";
                 btn.style.backgroundColor = "#23a55a";
                 btn.style.color = "#ffffff";
                 setTimeout(() => {
-                    btn.innerText = originalText;
+                    btn.innerText = original;
                     btn.style.backgroundColor = "";
                     btn.style.color = "";
                 }, 2000);
             }).catch(() => {
-                prompt("Copy Discord tag:", tag);
+                prompt("Copy text:", str);
             });
         }
     </script>
