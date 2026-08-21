@@ -73,161 +73,55 @@
             font-weight: 700;
         }
 
-        .profile-grid-container {
+        /* Widget Grid Container */
+        .widget-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
         }
 
-        .discord-user-card {
-            background: #18191c;
-            border-radius: 16px;
+        .discord-widget-box {
+            background: #111214;
+            border-radius: 18px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-            position: relative;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 12px 16px;
             transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
-        .discord-user-card:hover {
+        .discord-widget-box:hover {
             transform: translateY(-4px);
             border-color: #5865F2;
         }
 
-        /* Banner Themes */
-        .discord-banner {
-            height: 85px;
+        .discord-iframe-widget {
             width: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .banner-tojo {
-            background: linear-gradient(135deg, #FF512F, #DD2476);
-        }
-
-        .banner-riddler {
-            background: linear-gradient(135deg, #8A2387, #E94057, #F27121);
-        }
-
-        .banner-storm {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-        }
-
-        .banner-jeet {
-            background: linear-gradient(135deg, #2193b0, #6dd5ed);
-        }
-
-        /* Avatar Container */
-        .discord-avatar-wrapper {
-            position: absolute;
-            top: 45px;
-            left: 18px;
-            width: 76px;
-            height: 76px;
-            border-radius: 50%;
+            height: 170px;
+            border: none;
+            border-radius: 12px;
             background: #18191c;
-            padding: 5px;
-            box-sizing: border-box;
         }
 
-        .discord-avatar-img {
+        .widget-action-row {
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #2f3136;
-            display: block;
-        }
-
-        .discord-status-dot {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 16px;
-            height: 16px;
-            background-color: #23a55a;
-            border-radius: 50%;
-            border: 3px solid #18191c;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Card Content */
-        .discord-card-content {
-            padding: 46px 18px 18px;
-        }
-
-        .discord-name-row {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2px;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 0 4px;
         }
 
-        .discord-global-name {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #ffffff;
-        }
-
-        .discord-badges {
-            display: flex;
-            gap: 5px;
-        }
-
-        .discord-tag {
-            font-size: 0.85rem;
-            color: #b5bac1;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .discord-role-tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-bottom: 12px;
-        }
-
-        .role-owner {
-            background: rgba(255, 153, 51, 0.2);
-            color: var(--saffron);
-            border: 1px solid rgba(255, 153, 51, 0.4);
-        }
-
-        .role-coowner {
-            background: rgba(168, 85, 247, 0.2);
-            color: #c084fc;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-        }
-
-        .discord-about-box {
-            background: #111214;
-            border-radius: 8px;
-            padding: 10px 12px;
-            font-size: 0.85rem;
-            color: #dbdee1;
-            line-height: 1.45;
-            margin-bottom: 14px;
-            border-left: 3px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .discord-card-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .discord-action-btn {
+        .widget-btn {
             flex: 1;
             background: #2b2d31;
             color: #f2f3f5;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 8px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.82rem;
             font-weight: 700;
             cursor: pointer;
             text-align: center;
@@ -236,12 +130,23 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 6px;
         }
 
-        .discord-action-btn:hover {
+        .widget-btn:hover {
             background: #5865F2;
             color: #ffffff;
+        }
+
+        .widget-btn.primary {
+            background: rgba(255, 153, 51, 0.2);
+            border-color: var(--saffron);
+            color: #fff;
+        }
+
+        .widget-btn.primary:hover {
+            background: var(--saffron);
+            color: #000;
         }
     </style>
 </head>
@@ -265,7 +170,7 @@
         <h1>About TheIndia</h1>
         <p class="subtitle">A digital <b>Adda</b> founded on the timeless philosophy of <i>Vasudhaiva Kutumbakam</i>—the world is one family.</p>
 
-        <!-- TOP LEADERSHIP SECTION -->
+        <!-- TOP LEADERSHIP WIDGET SECTION -->
         <section class="leadership-wrapper">
             <span class="section-header-tag">Official Community Administration</span>
 
@@ -274,52 +179,32 @@
                 👑 Server Owners <span class="role-badge-pill">Founders</span>
             </div>
 
-            <div class="profile-grid-container">
-                <!-- Tojo -->
-                <div class="discord-user-card" id="card-tojo">
-                    <div class="discord-banner banner-tojo" id="banner-tojo"></div>
-                    <div class="discord-avatar-wrapper">
-                        <img src="https://cdn.discordapp.com/embed/avatars/0.png" id="avatar-tojo" alt="Tojo Discord PFP" class="discord-avatar-img">
-                        <div class="discord-status-dot" id="status-tojo" title="Online"></div>
-                    </div>
-                    <div class="discord-card-content">
-                        <div class="discord-name-row">
-                            <div class="discord-global-name" id="name-tojo">Tojo</div>
-                            <div class="discord-badges">👑 🇮🇳</div>
-                        </div>
-                        <div class="discord-tag">@x._tf.tojo</div>
-                        <span class="discord-role-tag role-owner">Server Founder & Owner</span>
-                        <div class="discord-about-box">
-                            Lead community architect, website designer, and server strategist for TheIndia digital Adda.
-                        </div>
-                        <div class="discord-card-actions">
-                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@x._tf.tojo', this)">📋 Copy Tag</button>
-                            <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
-                        </div>
+            <div class="widget-grid-container">
+                <!-- Tojo Widget -->
+                <div class="discord-widget-box">
+                    <iframe 
+                        src="https://widgets.fayevr.dev/discord/user/1201201235424985208" 
+                        class="discord-iframe-widget" 
+                        loading="lazy"
+                        title="Tojo Discord Profile Widget">
+                    </iframe>
+                    <div class="widget-action-row">
+                        <button type="button" class="widget-btn" onclick="copyTag('x._tf.tojo', this)">📋 Copy Tag</button>
+                        <a href="https://discord.com/users/1201201235424985208" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
                     </div>
                 </div>
 
-                <!-- Riddler -->
-                <div class="discord-user-card" id="card-riddler">
-                    <div class="discord-banner banner-riddler" id="banner-riddler"></div>
-                    <div class="discord-avatar-wrapper">
-                        <img src="https://cdn.discordapp.com/embed/avatars/1.png" id="avatar-riddler" alt="Riddler Discord PFP" class="discord-avatar-img">
-                        <div class="discord-status-dot" id="status-riddler" title="Online"></div>
-                    </div>
-                    <div class="discord-card-content">
-                        <div class="discord-name-row">
-                            <div class="discord-global-name" id="name-riddler">Riddler</div>
-                            <div class="discord-badges">⚡ 🔥</div>
-                        </div>
-                        <div class="discord-tag">@ridddler.ly</div>
-                        <span class="discord-role-tag role-owner">Server Founder & Owner</span>
-                        <div class="discord-about-box">
-                            Operations head, automod developer, event host, and overall server coordinator.
-                        </div>
-                        <div class="discord-card-actions">
-                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@ridddler.ly', this)">📋 Copy Tag</button>
-                            <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
-                        </div>
+                <!-- Riddler Widget -->
+                <div class="discord-widget-box">
+                    <iframe 
+                        src="https://widgets.fayevr.dev/discord/user/565739284922105863" 
+                        class="discord-iframe-widget" 
+                        loading="lazy"
+                        title="Riddler Discord Profile Widget">
+                    </iframe>
+                    <div class="widget-action-row">
+                        <button type="button" class="widget-btn" onclick="copyTag('ridddler.ly', this)">📋 Copy Tag</button>
+                        <a href="https://discord.com/users/565739284922105863" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
                     </div>
                 </div>
             </div>
@@ -329,52 +214,32 @@
                 🛡️ Server Co-Owners <span class="role-badge-pill" style="border-color: #c084fc; color: #c084fc; background: rgba(168,85,247,0.15);">Executive Staff</span>
             </div>
 
-            <div class="profile-grid-container">
-                <!-- Storm breaker -->
-                <div class="discord-user-card" id="card-storm">
-                    <div class="discord-banner banner-storm" id="banner-storm"></div>
-                    <div class="discord-avatar-wrapper">
-                        <img src="https://cdn.discordapp.com/embed/avatars/2.png" id="avatar-storm" alt="Storm breaker Discord PFP" class="discord-avatar-img">
-                        <div class="discord-status-dot" id="status-storm" title="Online"></div>
-                    </div>
-                    <div class="discord-card-content">
-                        <div class="discord-name-row">
-                            <div class="discord-global-name" id="name-storm">Storm breaker</div>
-                            <div class="discord-badges">🌪️ 🛡️</div>
-                        </div>
-                        <div class="discord-tag">@shazaesthetics</div>
-                        <span class="discord-role-tag role-coowner">Server Co-Owner</span>
-                        <div class="discord-about-box">
-                            Community oversight, voice lounge management, and gaming squad matchmaker.
-                        </div>
-                        <div class="discord-card-actions">
-                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@shazaesthetics', this)">📋 Copy Tag</button>
-                            <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
-                        </div>
+            <div class="widget-grid-container">
+                <!-- Storm breaker Widget -->
+                <div class="discord-widget-box">
+                    <iframe 
+                        src="https://widgets.fayevr.dev/discord/user/1303344617848311863" 
+                        class="discord-iframe-widget" 
+                        loading="lazy"
+                        title="Storm breaker Discord Profile Widget">
+                    </iframe>
+                    <div class="widget-action-row">
+                        <button type="button" class="widget-btn" onclick="copyTag('shazaesthetics', this)">📋 Copy Tag</button>
+                        <a href="https://discord.com/users/1303344617848311863" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
                     </div>
                 </div>
 
-                <!-- Jeet -->
-                <div class="discord-user-card" id="card-jeet">
-                    <div class="discord-banner banner-jeet" id="banner-jeet"></div>
-                    <div class="discord-avatar-wrapper">
-                        <img src="https://cdn.discordapp.com/embed/avatars/3.png" id="avatar-jeet" alt="Jeet Discord PFP" class="discord-avatar-img">
-                        <div class="discord-status-dot" id="status-jeet" title="Online"></div>
-                    </div>
-                    <div class="discord-card-content">
-                        <div class="discord-name-row">
-                            <div class="discord-global-name" id="name-jeet">Jeet</div>
-                            <div class="discord-badges">✨ 🎯</div>
-                        </div>
-                        <div class="discord-tag">@jeet_4160</div>
-                        <span class="discord-role-tag role-coowner">Server Co-Owner</span>
-                        <div class="discord-about-box">
-                            Bollywood watch parties, community events organizer, and user safety supervisor.
-                        </div>
-                        <div class="discord-card-actions">
-                            <button type="button" class="discord-action-btn" onclick="copyUserHandle('@jeet_4160', this)">📋 Copy Tag</button>
-                            <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="discord-action-btn">View Profile ↗</a>
-                        </div>
+                <!-- Jeet Widget -->
+                <div class="discord-widget-box">
+                    <iframe 
+                        src="https://widgets.fayevr.dev/discord/user/1515919444776325210" 
+                        class="discord-iframe-widget" 
+                        loading="lazy"
+                        title="Jeet Discord Profile Widget">
+                    </iframe>
+                    <div class="widget-action-row">
+                        <button type="button" class="widget-btn" onclick="copyTag('jeet_4160', this)">📋 Copy Tag</button>
+                        <a href="https://discord.com/users/1515919444776325210" target="_blank" rel="noopener" class="widget-btn primary">View Profile ↗</a>
                     </div>
                 </div>
             </div>
@@ -441,63 +306,10 @@
         <div class="footer-bottom">&copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.</div>
     </footer>
 
-    <!-- Dynamic Discord Profile PFP & Status Fetcher -->
+    <!-- Universal Tag Copy Helper -->
     <script>
-        const LEADERSHIP_ACCOUNTS = [
-            { id: '1201201235424985208', key: 'tojo' },
-            { id: '565739284922105863', key: 'riddler' },
-            { id: '1303344617848311863', key: 'storm' },
-            { id: '1515919444776325210', key: 'jeet' }
-        ];
-
-        async function fetchDiscordProfiles() {
-            for (const user of LEADERSHIP_ACCOUNTS) {
-                try {
-                    const res = await fetch(`https://api.lanyard.rest/v1/users/${user.id}`);
-                    if (!res.ok) continue;
-                    const json = await res.json();
-                    if (json.success && json.data) {
-                        const d = json.data;
-                        const u = d.discord_user;
-                        
-                        // Live Avatar
-                        if (u.avatar) {
-                            const ext = u.avatar.startsWith('a_') ? 'gif' : 'png';
-                            document.getElementById(`avatar-${user.key}`).src = `https://cdn.discordapp.com/avatars/${u.id}/${u.avatar}.${ext}?size=128`;
-                        }
-
-                        // Display Name if available
-                        if (u.global_name) {
-                            document.getElementById(`name-${user.key}`).innerText = u.global_name;
-                        }
-
-                        // Real-time Status dot
-                        const statusDot = document.getElementById(`status-${user.key}`);
-                        if (d.discord_status === 'online') {
-                            statusDot.style.backgroundColor = '#23a55a';
-                            statusDot.title = 'Online';
-                        } else if (d.discord_status === 'idle') {
-                            statusDot.style.backgroundColor = '#f0b232';
-                            statusDot.title = 'Idle';
-                        } else if (d.discord_status === 'dnd') {
-                            statusDot.style.backgroundColor = '#f23f43';
-                            statusDot.title = 'Do Not Disturb';
-                        } else {
-                            statusDot.style.backgroundColor = '#80848e';
-                            statusDot.title = 'Offline';
-                        }
-                    }
-                } catch (e) {
-                    console.log('Error fetching user ' + user.id, e);
-                }
-            }
-        }
-
-        fetchDiscordProfiles();
-        setInterval(fetchDiscordProfiles, 30000);
-
-        function copyUserHandle(handle, btn) {
-            navigator.clipboard.writeText(handle).then(() => {
+        function copyTag(tag, btn) {
+            navigator.clipboard.writeText(tag).then(() => {
                 const originalText = btn.innerText;
                 btn.innerText = "Copied! ✅";
                 btn.style.backgroundColor = "#23a55a";
@@ -508,7 +320,7 @@
                     btn.style.color = "";
                 }, 2000);
             }).catch(() => {
-                prompt("Copy Discord tag:", handle);
+                prompt("Copy Discord tag:", tag);
             });
         }
     </script>
