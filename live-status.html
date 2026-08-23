@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png?v=4">
     
+    <!-- PWA & Mobile Web Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff9933">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <!-- Primary SEO Metadata -->
-    <title>Live Server Status - Active Indian Discord Server | TheIndia</title>
-    <meta name="description" content="Check real-time live member counts, active voice channel status, and server health for TheIndia - the premier active Indian Discord server to join.">
-    <meta name="keywords" content="active indian discord server live status, indian discord servers to join, live hindi voice chat discord, discord servers india list">
+    <title>Live Discord Server Status & Online Members | TheIndia</title>
+    <meta name="description" content="Check real-time live member activity, active voice lounges, and server status for TheIndia Discord community. Join 24/7 active Hindi voice channels.">
+    <meta name="keywords" content="live discord server status, theindia live members, discord active voice count, indian discord live status">
     <meta name="robots" content="index, follow">
+    
     <link rel="canonical" href="https://bestindiandiscord.com/live-status.html">
 
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Live Status & Stats | TheIndia Discord Server">
-    <meta property="og:description" content="View live online members, active voice chat counts, and server uptime.">
+    <meta property="og:title" content="Live Discord Server Status | TheIndia">
+    <meta property="og:description" content="Check real-time member count, voice activity, and live presence in TheIndia Discord community.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bestindiandiscord.com/live-status.html">
     <meta property="og:image" content="https://bestindiandiscord.com/best_active_india_discord_servers.jpg">
@@ -27,7 +34,7 @@
     <!-- External Shared Stylesheet -->
     <link rel="stylesheet" href="style.css?v=11">
 
-    <!-- Google tag (gtag.js) - GA4 Tracking -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,50 +43,140 @@
 
       gtag('config', 'G-XMBF3CRKPX');
     </script>
-    
+
     <style>
+        .status-container {
+            max-width: 900px;
+            margin: 30px auto 40px;
+            padding: 0 16px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
         .status-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 16px;
-            max-width: 850px;
-            margin: 30px auto;
-            text-align: left;
+            margin-bottom: 25px;
+            width: 100%;
         }
 
-        .status-stat-card {
+        .status-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
+            text-align: center;
             backdrop-filter: blur(12px);
+            box-sizing: border-box;
         }
 
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .stat-value {
-            font-size: 1.8rem;
+        .status-val {
+            font-size: 2rem;
             font-weight: 800;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--saffron);
+            margin: 8px 0 4px;
+            line-height: 1.2;
+            word-break: break-word;
         }
 
-        .stat-indicator {
+        .status-label {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .widget-box {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .members-list-wrapper {
+            max-height: 380px;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px 4px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .member-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--white);
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .member-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--saffron);
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .member-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 140px;
+        }
+
+        .live-dot-green {
             width: 10px;
             height: 10px;
+            background-color: #23a55a;
             border-radius: 50%;
-            background: #23a55a;
-            box-shadow: 0 0 12px #23a55a;
+            box-shadow: 0 0 10px #23a55a;
+            display: inline-block;
+            animation: pulseDot 2s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        @media (max-width: 600px) {
+            .status-container {
+                margin: 20px auto 30px;
+                padding: 0 12px;
+            }
+            .status-val {
+                font-size: 1.7rem;
+            }
+            .status-card {
+                padding: 16px 12px;
+            }
+            .widget-box {
+                padding: 16px 12px;
+            }
+            .member-chip {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .member-name {
+                max-width: none;
+            }
         }
     </style>
 </head>
@@ -98,55 +195,59 @@
         </ul>
     </nav>
 
-    <main class="container">
-        <span class="namaste">Real-Time Community Telemetry</span>
-        <h1>Live Server Status</h1>
-        <p class="subtitle">Live statistics and presence metrics for <b>TheIndia</b>—rated the most active <b>Indian Discord server to join</b>.</p>
+    <main class="status-container">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="namaste" style="display: block;">Real-Time Discord Telemetry</span>
+            <h1 style="font-size: clamp(1.8rem, 5vw, 2.4rem); margin: 8px 0 12px;">Live Server Activity</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+                Live telemetry fetched directly via Discord's Widget API. Join our active voice channels and community hangouts today.
+            </p>
+        </div>
 
-        <!-- Live Server Health Grid -->
+        <!-- Telemetry Stats Cards -->
         <div class="status-grid">
-            <div class="status-stat-card">
-                <span class="stat-label">Server Operational Health</span>
-                <div class="stat-value">
-                    <span class="stat-indicator"></span> 100% Online
+            <div class="status-card">
+                <div class="status-label">Server Status</div>
+                <div class="status-val" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.3rem;">
+                    <span class="live-dot-green"></span>
+                    <span style="color: #23a55a;">ONLINE</span>
                 </div>
+                <div style="color: var(--text-muted); font-size: 0.78rem; margin-top: 4px;">24/7 SFW Community</div>
             </div>
 
-            <div class="status-stat-card">
-                <span class="stat-label">Online Right Now</span>
-                <div class="stat-value" id="status-live-count" style="color: var(--saffron);">
-                    Fetching...
-                </div>
+            <div class="status-card">
+                <div class="status-label">Online In Discord</div>
+                <div class="status-val" id="online-count">Loading...</div>
+                <div style="color: var(--text-muted); font-size: 0.78rem; margin-top: 4px;">Active Right Now</div>
             </div>
 
-            <div class="status-stat-card">
-                <span class="stat-label">Nitro Boost Status</span>
-                <div class="stat-value" style="color: #f47fff;">
-                    💎 Level 3
-                </div>
-            </div>
-
-            <div class="status-stat-card">
-                <span class="stat-label">Audio & Stream Bitrate</span>
-                <div class="stat-value" style="color: #00c6ff;">
-                    🔊 384 Kbps
-                </div>
+            <div class="status-card">
+                <div class="status-label">Voice Audio Quality</div>
+                <div class="status-val" style="font-size: 1.5rem; color: var(--white);">384 Kbps</div>
+                <div style="color: var(--text-muted); font-size: 0.78rem; margin-top: 4px;">Level 3 Nitro Boosted</div>
             </div>
         </div>
 
-        <div class="features" style="text-align: left; max-width: 850px; margin: 0 auto 35px;">
-            <div class="feature-card" style="width: 100%;">
-                <h3>🎙️ 24/7 Active Hindi Voice Lounges</h3>
-                <p>Our voice channels maintain constant activity across all Indian standard time zones. Whether you're dropping in for 3 PM study sessions or 3 AM late-night gaming comms, our high-bitrate voice rooms are always active and toxic-free.</p>
+        <!-- Live Active Members Widget Feed -->
+        <div class="widget-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0;">Online Members Sampling</h3>
+                <span id="members-sample-count" style="color: var(--saffron); font-size: 0.8rem; font-weight: 700;">Fetching live feed...</span>
+            </div>
+            
+            <div id="members-container" class="members-list-wrapper">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Connecting to Discord Gateway...</p>
             </div>
         </div>
 
-        <div class="button-group">
-            <a href="https://discord.gg/theindia" class="cta-btn" target="_blank" rel="noopener">Hop Into Active VC Now</a>
-            <a href="vote.html" class="cta-btn secondary">Vote For The Server</a>
+        <!-- Conversion Callout Box -->
+        <div style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px 20px; text-align: center; margin-top: 25px;">
+            <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 8px;">Jump Into The Live Conversation</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Hop into our 24/7 Chai Pe Charcha voice lounges or assemble your gaming 5-stack.</p>
+            <a href="https://discord.gg/theindia" target="_blank" rel="noopener" class="cta-btn" style="display: inline-block;">Join TheIndia on Discord →</a>
         </div>
 
-        <div class="decor">✧ ❂ ✧</div>
+        <div class="decor" style="text-align: center; margin-top: 30px;">✧ ❂ ✧</div>
     </main>
 
     <!-- Mobile Sticky Join CTA Bar -->
@@ -161,7 +262,6 @@
                 <h2>The<span>India</span></h2>
                 <p>TheIndia is the top-rated <strong>Indian Discord server to join</strong> for gaming, making friends, and chilling. Join our active Desi community for BGMI, Valorant, Bollywood movie nights, and 24/7 toxic-free Hindi voice chats.</p>
             </div>
-            
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -173,7 +273,6 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
                 <h3>Community</h3>
                 <ul>
@@ -183,34 +282,67 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             &copy; 2026 TheIndia Community. All rights reserved. Designed by Tojo & Riddler.
         </div>
     </footer>
 
-    <!-- Widget Live Telemetry Script -->
+    <!-- Real-time Telemetry Script -->
     <script>
         const GUILD_ID = '966912718902796359';
-        async function fetchLiveTelemetry() {
-            const countEl = document.getElementById('status-live-count');
+
+        async function fetchLiveStatus() {
+            const onlineCountEl = document.getElementById('online-count');
+            const membersContainer = document.getElementById('members-container');
+            const sampleCountEl = document.getElementById('members-sample-count');
+
             try {
-                const res = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?t=${Date.now()}`);
-                if (!res.ok) throw new Error('Network error');
-                const data = await res.json();
-                const count = data.presence_count || (data.members ? data.members.length : null);
-                if (count) {
-                    countEl.innerText = `${count} Active`;
+                const response = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/widget.json?t=${Date.now()}`);
+                if (!response.ok) throw new Error('API Unavailable');
+                
+                const data = await response.json();
+                
+                // Update Presence Count
+                const presenceCount = data.presence_count || (data.members ? data.members.length : 0);
+                onlineCountEl.innerText = presenceCount > 0 ? presenceCount.toLocaleString() : 'Active';
+
+                // Render Member Sample Chips
+                if (data.members && data.members.length > 0) {
+                    sampleCountEl.innerText = `${data.members.length} Members in Active Lounges`;
+                    membersContainer.innerHTML = '';
+                    
+                    data.members.forEach(member => {
+                        const chip = document.createElement('div');
+                        chip.className = 'member-chip';
+                        
+                        const avatarUrl = member.avatar_url || 'favicon.png';
+                        const username = member.username || 'Desi Member';
+                        const statusColor = member.status === 'online' ? '#23a55a' : (member.status === 'idle' ? '#faa81a' : '#f23f43');
+
+                        chip.innerHTML = `
+                            <img src="${avatarUrl}" alt="${username}" class="member-avatar" loading="lazy" onerror="this.src='favicon.png'">
+                            <span class="member-name">${username}</span>
+                            <span style="width: 7px; height: 7px; border-radius: 50%; background-color: ${statusColor}; flex-shrink: 0;"></span>
+                        `;
+                        membersContainer.appendChild(chip);
+                    });
                 } else {
-                    countEl.innerText = `Active Now`;
+                    sampleCountEl.innerText = 'Active Members In Voice';
+                    membersContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">Voice and text lounges active. Join server to see full channel roster.</p>';
                 }
-            } catch(e) {
-                countEl.innerText = `Active Now`;
+
+            } catch (err) {
+                onlineCountEl.innerText = 'Active';
+                sampleCountEl.innerText = 'Server Online';
+                membersContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">Voice channels active. Join via Discord to view full list.</p>';
             }
         }
-        fetchLiveTelemetry();
-        setInterval(fetchLiveTelemetry, 30000);
+
+        fetchLiveStatus();
+        setInterval(fetchLiveStatus, 30000);
     </script>
 
+    <!-- Conversion Tracking & Discord App Deep-Link Protocol -->
+    <script src="tracker.js" defer></script>
 </body>
 </html>
