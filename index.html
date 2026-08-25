@@ -258,6 +258,65 @@
             color: var(--text-muted);
             line-height: 1.45;
         }
+
+        /* Weekly Events Schedule Grid */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .schedule-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 18px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--saffron);
+        }
+
+        .schedule-day {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--saffron);
+            margin-bottom: 4px;
+        }
+
+        .schedule-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .schedule-time {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .schedule-detail {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -437,6 +496,38 @@
         </div>
     </section>
 
+    <!-- Weekly Community Event Schedule Section -->
+    <section class="bento-section" style="margin-top: 30px;">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span class="bento-tag">Community Timetable</span>
+            <h2 style="color: var(--white); font-size: 1.8rem; margin: 6px 0;">Weekly Adda & Event Schedule</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Join scheduled events every week in our Level 3 high-bitrate voice stages.</p>
+        </div>
+
+        <div class="schedule-grid">
+            <div class="schedule-card">
+                <div class="schedule-day">Every Friday</div>
+                <div class="schedule-title">🎬 Bollywood & Anime Night</div>
+                <div class="schedule-time">⏰ 10:00 PM IST • Stage VC</div>
+                <div class="schedule-detail">High-definition 1080p 60FPS movie screenings, popcorn banter, and weekend kickoff chat.</div>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-day">Every Saturday</div>
+                <div class="schedule-title">🎯 5v5 Valorant & BGMI Scrims</div>
+                <div class="schedule-time">⏰ 8:30 PM IST • Gaming Hub</div>
+                <div class="schedule-detail">Community custom matches, rank push lobbies, and friendly competitive show matches.</div>
+            </div>
+
+            <div class="schedule-card">
+                <div class="schedule-day">Every Sunday</div>
+                <div class="schedule-title">🎵 Sunday Mehfil & Open Mic</div>
+                <div class="schedule-time">⏰ 9:30 PM IST • Music Lounge</div>
+                <div class="schedule-detail">Acoustic jamming, late-night Bollywood singing, stand-up banter, and Nitro giveaways.</div>
+            </div>
+        </div>
+    </section>
+
     <!-- 2026 Community Guides Grid -->
     <section class="home-blog-section">
         <h2>Explore Our 2026 Community Guides</h2>
@@ -449,7 +540,7 @@
 
             <a href="server-reviews-2026.html" class="home-blog-card">
                 <h3>Indian Discord Server Reviews (2026)</h3>
-                <p>Honest rankings and safety comparisons of TheIndia, Junoon, ISHQ India, and Born2Flirt based on voice activity and moderation...</p>
+                <p>Honest rankings and safety comparisons of TheIndia, Junoon, ISHQ India, Born2Flirt, and eCafe based on voice activity and moderation...</p>
                 <span style="color: var(--saffron); font-weight: 800; font-size: 0.8rem; margin-top: 15px; display: block;">READ REVIEWS →</span>
             </a>
 
