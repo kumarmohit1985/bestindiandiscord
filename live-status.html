@@ -338,7 +338,7 @@
                 const presenceCount = data.presence_count || (data.members ? data.members.length : 0);
                 onlineCountEl.innerText = presenceCount > 0 ? presenceCount.toLocaleString() : 'Active';
 
-                // Render Member Sample Chips
+                // Render Member Sample Chips securely
                 if (data.members && data.members.length > 0) {
                     sampleCountEl.innerText = `${data.members.length} Members in Active Lounges`;
                     membersContainer.innerHTML = '';
@@ -347,15 +347,27 @@
                         const chip = document.createElement('div');
                         chip.className = 'member-chip';
                         
-                        const avatarUrl = member.avatar_url || 'favicon.png';
-                        const username = member.username || 'Desi Member';
-                        const statusColor = member.status === 'online' ? '#23a55a' : (member.status === 'idle' ? '#faa81a' : '#f23f43');
+                        const img = document.createElement('img');
+                        img.src = member.avatar_url && member.avatar_url.startsWith('http') ? member.avatar_url : 'favicon.png';
+                        img.alt = 'Member Avatar';
+                        img.className = 'member-avatar';
+                        img.loading = 'lazy';
+                        img.onerror = function() { this.src = 'favicon.png'; };
+                        
+                        const nameSpan = document.createElement('span');
+                        nameSpan.className = 'member-name';
+                        nameSpan.textContent = member.username || 'Desi Member';
 
-                        chip.innerHTML = `
-                            <img src="${avatarUrl}" alt="${username}" class="member-avatar" loading="lazy" onerror="this.src='favicon.png'">
-                            <span class="member-name">${username}</span>
-                            <span style="width: 7px; height: 7px; border-radius: 50%; background-color: ${statusColor}; flex-shrink: 0;"></span>
-                        `;
+                        const dot = document.createElement('span');
+                        dot.style.width = '7px';
+                        dot.style.height = '7px';
+                        dot.style.borderRadius = '50%';
+                        dot.style.backgroundColor = member.status === 'online' ? '#23a55a' : (member.status === 'idle' ? '#faa81a' : '#f23f43');
+                        dot.style.flexShrink = '0';
+
+                        chip.appendChild(img);
+                        chip.appendChild(nameSpan);
+                        chip.appendChild(dot);
                         membersContainer.appendChild(chip);
                     });
                 } else {
