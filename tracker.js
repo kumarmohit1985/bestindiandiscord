@@ -1,43 +1,43 @@
 /**
  * TheIndia Conversion Tracking & Mobile Deep Link Protocol
+ * Robust event delegation + Beacon GA4 delivery
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all join invite links
-    const discordLinks = document.querySelectorAll('a[href*="discord.gg/theindia"]');
+    document.body.addEventListener('click', (e) => {
+        // Match any clicked link or child element pointing to discord.gg/theindia
+        const link = e.target.closest('a[href*="discord.gg/theindia"]');
+        if (!link) return;
 
-    discordLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const currentPath = window.location.pathname || 'homepage';
+        const currentPath = window.location.pathname || '/';
 
-            // 1. Send Custom Conversion Event to Google Analytics 4
-            if (typeof gtag === 'function') {
-                gtag('event', 'join_discord_click', {
-                    'event_category': 'Engagement',
-                    'event_label': currentPath,
-                    'landing_page': currentPath,
-                    'value': 1
-                });
-            }
+        // 1. Send Custom Conversion Event to GA4 via Beacon (Non-blocking)
+        if (typeof gtag === 'function') {
+            gtag('event', 'join_discord_click', {
+                'event_category': 'Engagement',
+                'event_label': currentPath,
+                'landing_page': currentPath,
+                'transport_type': 'beacon',
+                'value': 1
+            });
+        }
 
-            // 2. Handle Mobile Deep-Linking for Native App Experience
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        // 2. Mobile Deep-Linking for Native App Opening
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            e.preventDefault();
+            const deepLink = 'discord://discord.com/invite/theindia';
+            const webLink = 'https://discord.gg/theindia';
             
-            if (isMobile) {
-                // Prevent default web navigation briefly to attempt app launch
-                e.preventDefault();
-                const deepLink = 'discord://discord.com/invite/theindia';
-                const webLink = 'https://discord.gg/theindia';
-                
-                const start = Date.now();
-                window.location.href = deepLink;
+            const start = Date.now();
+            window.location.href = deepLink;
 
-                // Fallback to standard web URL if app fails to open within 1.5 seconds
-                setTimeout(() => {
-                    if (Date.now() - start < 1800) {
-                        window.location.href = webLink;
-                    }
-                }, 1500);
-            }
-        });
+            // Fallback to standard web link if the native app isn't installed
+            setTimeout(() => {
+                if (Date.now() - start < 1800) {
+                    window.location.href = webLink;
+                }
+            }, 1500);
+        }
     });
 });
