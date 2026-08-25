@@ -27,6 +27,37 @@
     <!-- External Shared Stylesheet -->
     <link rel="stylesheet" href="style.css?v=11">
 
+    <style>
+        /* Navigation GIF Logo Scaling & Alignment */
+        .nav-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-gif {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            filter: drop-shadow(0 0 6px rgba(255, 153, 51, 0.4));
+            transition: transform 0.2s ease;
+        }
+
+        .nav-brand:hover .nav-logo-gif {
+            transform: scale(1.08) rotate(5deg);
+        }
+
+        @media (max-width: 600px) {
+            .nav-logo-gif {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+
     <!-- Google tag (gtag.js) - GA4 Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
     <script>
@@ -82,7 +113,10 @@
 <body>
 
     <nav>
-        <a href="/" class="nav-brand">The<span>India</span></a>
+        <a href="/" class="nav-brand">
+            <img src="logo.gif" alt="TheIndia Logo" class="nav-logo-gif">
+            The<span>India</span>
+        </a>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="about.html">About Us</a></li>
