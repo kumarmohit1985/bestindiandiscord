@@ -409,7 +409,7 @@ h1 {
     letter-spacing: 5px;
 }
 
-/* Blog Cards & Grid - Revised to Prevent Overlaps & Layout Breaks */
+/* Blog Cards & Grid - Fixed Layout Overlaps */
 .home-blog-section {
     max-width: 900px;
     margin: 20px auto 60px;
@@ -430,7 +430,6 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     text-align: left;
-    align-items: stretch;
 }
 
 .home-blog-card,
@@ -445,15 +444,13 @@ h1 {
     transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     box-sizing: border-box;
-    height: 100%;
-    min-height: 240px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .home-blog-card.featured {
-    grid-column: span 1;
+    grid-column: auto;
 }
 
 .home-blog-card:hover,
@@ -475,7 +472,6 @@ h1 {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.6;
-    flex-grow: 1;
 }
 
 /* Mobile Sticky Bottom CTA Bar */
