@@ -62,7 +62,7 @@ nav {
     color: var(--saffron);
 }
 
-/* Global Navigation GIF Logo */
+/* Global Navigation Logo */
 .nav-logo-gif {
     width: 34px;
     height: 34px;
@@ -409,7 +409,7 @@ h1 {
     letter-spacing: 5px;
 }
 
-/* Blog Cards & Grid - Fixed Layout Overlaps */
+/* Blog Cards & Grid */
 .home-blog-section {
     max-width: 900px;
     margin: 20px auto 60px;
