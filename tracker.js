@@ -1,11 +1,11 @@
 /**
- * TheIndia Conversion Tracking & Mobile Deep Link Protocol
+ * FIZA Conversion Tracking & Mobile Deep Link Protocol
  * Robust event delegation + Beacon GA4 delivery
  */
 document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', (e) => {
-        // Match any clicked link or child element pointing to discord.gg/theindia
-        const link = e.target.closest('a[href*="discord.gg/theindia"]');
+        // Match any clicked link or child element pointing to discord.gg/fiza
+        const link = e.target.closest('a[href*="discord.gg/fiza"]');
         if (!link) return;
 
         const currentPath = window.location.pathname || '/';
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (isMobile) {
             e.preventDefault();
-            const deepLink = 'discord://discord.com/invite/theindia';
-            const webLink = 'https://discord.gg/theindia';
+            const deepLink = 'discord://discord.com/invite/fiza';
+            const webLink = 'https://discord.gg/fiza';
             
             const start = Date.now();
             window.location.href = deepLink;
