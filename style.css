@@ -193,7 +193,7 @@ h1 {
 }
 
 /* ==========================================================================
-   Badges, Counter Pills & Snippet Box
+   Synchronized Capsule Badges & Counter Pills
    ========================================================================== */
 .hero-pills {
     display: flex;
@@ -221,30 +221,83 @@ h1 {
     transform: translateY(-2px);
 }
 
-.live-counter-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(34, 197, 94, 0.08);
-    border: 1px solid rgba(34, 197, 94, 0.25);
-    color: #4ade80;
-    padding: 6px 18px;
-    border-radius: var(--radius-pill);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
+/* Parent container for dual capsules */
+.dual-counter-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    margin: 15px auto 25px !important;
 }
 
-.live-pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #22c55e;
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 10px #22c55e;
-    animation: livePulse 1.8s infinite;
+/* Uniform capsule sizing rules */
+.stat-pill-badge,
+.live-counter-badge,
+.capsule-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 38px !important;
+    padding: 0 18px !important;
+    border-radius: var(--radius-pill) !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--border-subtle) !important;
+    color: var(--white) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.25s ease !important;
+}
+
+/* Green online live state */
+.stat-pill-badge.online,
+.live-counter-badge,
+.capsule-badge.online {
+    border-color: rgba(34, 197, 94, 0.3) !important;
+    background: rgba(34, 197, 94, 0.08) !important;
+    color: #4ade80 !important;
+}
+
+/* Saffron verified community state */
+.stat-pill-badge.verified,
+.capsule-badge.verified {
+    border-color: rgba(255, 153, 51, 0.35) !important;
+    background: rgba(255, 153, 51, 0.08) !important;
+    color: var(--saffron) !important;
+}
+
+.stat-pill-badge:hover,
+.live-counter-badge:hover,
+.capsule-badge:hover {
+    transform: translateY(-2px);
+}
+
+.live-pulse-dot,
+.live-dot-green {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #22c55e !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    box-shadow: 0 0 10px #22c55e !important;
+    animation: livePulse 1.8s infinite !important;
+    margin: 0 !important;
+}
+
+.live-dot-saffron {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: var(--saffron) !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    box-shadow: 0 0 10px var(--saffron) !important;
+    margin: 0 !important;
 }
 
 @keyframes livePulse {
@@ -253,7 +306,9 @@ h1 {
     100% { transform: scale(0.9); opacity: 0.75; }
 }
 
-/* Position-0 Answer Box */
+/* ==========================================================================
+   Position-0 Answer Box
+   ========================================================================== */
 .aeo-answer-box {
     background: var(--bg-surface);
     border: 1px solid rgba(255, 153, 51, 0.25);
