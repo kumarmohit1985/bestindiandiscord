@@ -19,82 +19,28 @@
     <meta property="og:image" content="https://bestindiandiscord.com/best_active_india_discord_servers.jpg">
     <meta property="og:locale" content="en_IN">
 
+    <!-- Performance & Preconnect Directives -->
+    <link rel="dns-prefetch" href="https://discord.com">
+    <link rel="preconnect" href="https://discord.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Asynchronous Non-Blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    </noscript>
     
-    <link rel="stylesheet" href="style.css?v=11">
-
-    <style>
-        /* Navigation GIF Logo Scaling & Alignment */
-        .nav-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .nav-logo-gif {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            filter: drop-shadow(0 0 6px rgba(255, 153, 51, 0.4));
-            transition: transform 0.2s ease;
-        }
-
-        .nav-brand:hover .nav-logo-gif {
-            transform: scale(1.08) rotate(5deg);
-        }
-
-        @media (max-width: 600px) {
-            .nav-logo-gif {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        .breadcrumbs-nav {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .breadcrumbs-nav a {
-            color: var(--saffron);
-            text-decoration: none;
-        }
-
-        .breadcrumbs-nav span {
-            margin: 0 6px;
-            opacity: 0.5;
-        }
-
-        .aeo-answer-box {
-            background: rgba(255, 153, 51, 0.08);
-            border-left: 4px solid var(--saffron);
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .aeo-answer-box p {
-            color: var(--white);
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-    </style>
+    <!-- External Shared Stylesheet -->
+    <link rel="preload" href="style.css?v=13" as="style">
+    <link rel="stylesheet" href="style.css?v=13">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XMBF3CRKPX');
     </script>
 
@@ -143,7 +89,7 @@
             }
           },
           "datePublished": "2026-02-10",
-          "dateModified": "2026-10-07",
+          "dateModified": "2026-10-09",
           "mainEntityOfPage": "https://bestindiandiscord.com/bgmi-custom-room-discord.html"
         },
         {
@@ -175,7 +121,7 @@
 
     <nav>
         <a href="/" class="nav-brand">
-            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="34" height="34">
+            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="32" height="32" fetchpriority="high" decoding="async">
             FIZA
         </a>
         <ul class="nav-links">
@@ -189,63 +135,116 @@
         </ul>
     </nav>
 
-    <main class="container" style="max-width: 850px; text-align: left; margin: 40px auto; padding: 0 20px;">
+    <main class="container" style="max-width: 900px; text-align: left; margin: 30px auto; padding: 0 20px;">
         
-        <div class="breadcrumbs-nav">
-            <a href="/">Home</a><span>›</span><a href="blog.html">Guides</a><span>›</span>BGMI Custom Room Discord Server
+        <!-- Breadcrumbs Navigation -->
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+            <a href="/" style="color: var(--saffron); text-decoration: none;">Home</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <a href="blog.html" style="color: var(--saffron); text-decoration: none;">Guides</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <span>BGMI Custom Rooms & Scrims</span>
         </div>
 
-        <span class="namaste" style="text-align: center; display: block;">Mobile Esports & Squad Matchmaking</span>
-        <h1 style="text-align: center; font-size: 2.3rem; margin-bottom: 16px;">BGMI Custom Room & Scrims Discord Server</h1>
-        
-        <!-- Answer-Box / AEO Featured Snippet Target Block -->
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="namaste">Mobile Esports & Squad Matchmaking</span>
+            <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px;">BGMI Custom Room & Scrims <span style="background: var(--saffron-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Discord Server</span></h1>
+            <p class="subtitle" style="margin-bottom: 0;">Daily free custom matches, T3 practice scrims, Ace/Conqueror rank push partners, and low-latency 4-man voice channels.</p>
+        </div>
+
+        <!-- Position-0 / AEO Direct Answer Snippet -->
         <div class="aeo-answer-box">
             <p>
                 <strong>Where can I find BGMI custom room Discord servers in India?</strong> <strong>FIZA</strong> is the top-rated Indian mobile gaming community hosting daily free-to-enter BGMI custom rooms, Tier-3 practice scrims, Ace and Conqueror rank-push LFGs, and dedicated 4-man 384kbps voice channels with zero-toxicity rules. Compare Indian communities on our <a href="best-servers-2026.html" style="color: var(--saffron); font-weight: 700;">Top 10 Indian Discord Servers List</a>.
             </p>
         </div>
 
-        <article style="color: var(--text-muted); line-height: 1.8; font-size: 1rem;">
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 30px 0 12px;">Why Play BGMI with FIZA Community?</h2>
-            <p>Playing Battlegrounds Mobile India with random teammates often leads to uncoordinated drops, mic-off teammates, and unnecessary rank point loss. Our dedicated BGMI section provides structured lobbies and low-ping comms in our <a href="hindi-voice-chat-discord.html" style="color: var(--saffron); font-weight: 700;">active Hindi voice channels</a>:</p>
+        <!-- Why Solo Queue in BGMI Fails Card -->
+        <section class="bento-card col-12" style="background: rgba(12, 14, 22, 0.65); margin: 25px 0;">
+            <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 10px;">Why Playing BGMI with Randoms Costs You Rank Points</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px;">
+                Playing Battlegrounds Mobile India with random squad fills often leads to hot-drop wipeouts, teammates playing without microphones, and unnecessary minus points.
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
+                Our dedicated mobile section provides structured lobbies and low-ping comms inside our <a href="hindi-voice-chat-discord.html" style="color: var(--saffron); font-weight: 700;">active Hindi voice channels</a>, ensuring every drop is coordinated from flight path to final circle.
+            </p>
+        </section>
 
-            <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px; margin: 15px 0;">
-                <li><strong style="color: var(--white);">Daily Custom Rooms:</strong> Free-to-enter Erangel, Miramar, and Sanhok custom matches with registered squads.</li>
-                <li><strong style="color: var(--white);">Conqueror & Ace LFG:</strong> Role-based ping channels to find serious pushers matching your exact tier and playstyle.</li>
-                <li><strong style="color: var(--white);">Dedicated Squad VCs:</strong> Crystal-clear 384kbps Level 3 bitrate channels so your game sound and callouts stay sharp.</li>
-                <li><strong style="color: var(--white);">PC & Sandbox Alternatives:</strong> Looking to switch games? Check out our <a href="indian-valorant-discord.html" style="color: var(--saffron); font-weight: 700;">Valorant Mumbai 5-stacks</a> or chill on our <a href="indian-roblox-minecraft-discord.html" style="color: var(--saffron); font-weight: 700;">Roblox & Minecraft SMP lobbies</a>.</li>
-                <li><strong style="color: var(--white);">Zero Toxicity:</strong> Strict moderation preventing toxic behavior, abusive callouts, or griefing.</li>
-            </ul>
+        <!-- BGMI Esports Bento Grid -->
+        <section class="bento-grid">
+            <div class="bento-card col-8" style="border-top: 3px solid var(--saffron);">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Nightly Competitions</span>
+                <h3 style="color: var(--white); font-size: 1.3rem; margin: 0 0 10px;">🏆 Daily Free-to-Enter Custom Matches</h3>
+                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin: 0 0 14px;">Every evening from 7:00 PM IST onwards, FIZA hosts free custom rooms across Erangel, Miramar, and Sanhok. Practice rotations, compound defense, and end-zone combat against registered competitive squads.</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="pill">Erangel & Miramar</span>
+                    <span class="pill">Slot Registration</span>
+                    <span class="pill">100% Free Entry</span>
+                </div>
+            </div>
 
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 35px 0 12px;">How to Get Daily BGMI Room IDs & Passwords</h2>
-            <ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <div class="bento-card col-4" style="border-top: 3px solid #5865F2;">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Rank Grind</span>
+                <h3 style="color: var(--white); font-size: 1.2rem; margin: 0 0 8px;">🔥 Ace & Conqueror LFG</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; margin: 0;">Ping-based looking-for-group channels filtered by role (Assaulter, IGL, Sniper, Support) to build balanced squads.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Low-Latency Comms</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">🔊 4-Man Squad VCs</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">User-locked 4-player voice channels powered by 384kbps bitrate keep game footsteps and audio callouts distinct.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Zero Toxicity</span>
+                <h3 style="color: #4ade80; font-size: 1.15rem; margin: 0 0 8px;">🛡️ Anti-Grief Rules</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Strict moderation bans griefing, rank shaming, and abusive voice chatter. Read our <a href="server-reviews-2026.html" style="color: var(--saffron); font-weight: 700;">Server Reviews</a>.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">PC & Sandbox Alternatives</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">🎮 Multi-Title Hub</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Switch games anytime: join our <a href="indian-valorant-discord.html" style="color: var(--saffron); font-weight: 700;">Valorant 5-stacks</a> or build on our <a href="indian-roblox-minecraft-discord.html" style="color: var(--saffron); font-weight: 700;">Minecraft SMP</a>.</p>
+            </div>
+        </section>
+
+        <!-- How to Join BGMI Rooms -->
+        <section class="bento-card col-12" style="margin: 25px 0; background: rgba(12, 14, 22, 0.65);">
+            <h3 style="color: var(--white); font-size: 1.25rem; margin-bottom: 12px;">How to Get Daily BGMI Room IDs & Passwords on FIZA</h3>
+            <ol style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; padding-left: 20px; margin: 0;">
                 <li>Join the server via <a href="https://discord.gg/fiza" target="_blank" rel="noopener" style="color: var(--saffron); font-weight: 700;">discord.gg/fiza</a>.</li>
                 <li>Go to <code>#roles</code> and select the <strong>BGMI / Mobile Gamer</strong> tag.</li>
-                <li>Access the <code>#bgmi-custom-rooms</code> and <code>#bgmi-lfg</code> channels to get live room details and match with players instantly.</li>
+                <li>Access the <code>#bgmi-custom-rooms</code> and <code>#bgmi-lfg</code> channels to get live room details, slot reservations, and squad invites.</li>
             </ol>
+        </section>
 
-            <div style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; text-align: center; margin: 40px 0;">
-                <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 8px;">Find Your BGMI Squad Today</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Join thousands of active mobile players and conquer the lobbies together.</p>
-                <a href="https://discord.gg/fiza" target="_blank" rel="noopener" class="cta-btn">Join BGMI Discord Rooms →</a>
-            </div>
+        <!-- CTA Callout Banner -->
+        <div class="bento-card col-12" style="text-align: center; padding: 35px 20px; margin: 30px 0; border-color: rgba(255, 153, 51, 0.3);">
+            <h3 style="color: var(--white); font-size: 1.4rem; margin-bottom: 8px;">Find Your BGMI Squad Today</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px;">Join thousands of mobile gamers competing in daily custom matches and rank-grind lounges.</p>
+            <a href="https://discord.gg/fiza" target="_blank" rel="noopener" class="cta-btn">Join BGMI Discord Rooms →</a>
+        </div>
 
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 35px 0 12px;">Frequently Asked Questions</h2>
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <h3 style="color: var(--saffron); font-size: 1.1rem; margin-bottom: 5px;">Do I need to pay any entry fee for BGMI scrims?</h3>
-                    <p>No, all daily custom matches, Tier-3 practice scrims, and fun tournaments on FIZA are 100% free to enter.</p>
+        <!-- FAQ Section -->
+        <section style="margin: 35px 0 25px;">
+            <h2 style="color: var(--white); font-size: 1.5rem; margin-bottom: 18px;">Frequently Asked Questions</h2>
+            <div class="bento-grid" style="margin-top: 0;">
+                <div class="bento-card col-12">
+                    <h4 style="color: var(--saffron); font-size: 1.05rem; margin: 0 0 6px;">Do I need to pay any entry fee for BGMI scrims?</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">No, all daily custom matches, Tier-3 practice scrims, and fun tournaments hosted on FIZA are 100% free to enter for server members.</p>
                 </div>
-                <div>
-                    <h3 style="color: var(--saffron); font-size: 1.1rem; margin-bottom: 5px;">Can solo players find a team?</h3>
-                    <p>Yes! Post in <code>#bgmi-lfg</code> with your role (Assaulter, IGL, Sniper, Support) to join an active trio or form a new 4-man squad.</p>
+
+                <div class="bento-card col-12">
+                    <h4 style="color: var(--saffron); font-size: 1.05rem; margin: 0 0 6px;">Can solo players find a team?</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Yes! Post your player profile in <code>#bgmi-lfg</code> with your role (Assaulter, IGL, Sniper, Support) to join an active trio or form a new 4-man roster.</p>
                 </div>
             </div>
-        </article>
+        </section>
 
         <div class="decor" style="text-align: center;">✧ ❂ ✧</div>
     </main>
 
+    <!-- Mobile Sticky CTA Bar -->
     <div class="mobile-sticky-cta">
         <div class="mobile-brand">FIZA Adda</div>
         <a href="https://discord.gg/fiza" class="mobile-btn" target="_blank" rel="noopener">Join Discord</a>
