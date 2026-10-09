@@ -19,82 +19,28 @@
     <meta property="og:image" content="https://bestindiandiscord.com/best_active_india_discord_servers.jpg">
     <meta property="og:locale" content="en_IN">
 
+    <!-- Performance & Preconnect Directives -->
+    <link rel="dns-prefetch" href="https://discord.com">
+    <link rel="preconnect" href="https://discord.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Asynchronous Non-Blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    </noscript>
     
-    <link rel="stylesheet" href="style.css?v=11">
-
-    <style>
-        /* Navigation GIF Logo Scaling & Alignment */
-        .nav-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .nav-logo-gif {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            filter: drop-shadow(0 0 6px rgba(255, 153, 51, 0.4));
-            transition: transform 0.2s ease;
-        }
-
-        .nav-brand:hover .nav-logo-gif {
-            transform: scale(1.08) rotate(5deg);
-        }
-
-        @media (max-width: 600px) {
-            .nav-logo-gif {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        .breadcrumbs-nav {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .breadcrumbs-nav a {
-            color: var(--saffron);
-            text-decoration: none;
-        }
-
-        .breadcrumbs-nav span {
-            margin: 0 6px;
-            opacity: 0.5;
-        }
-
-        .aeo-answer-box {
-            background: rgba(255, 153, 51, 0.08);
-            border-left: 4px solid var(--saffron);
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .aeo-answer-box p {
-            color: var(--white);
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-    </style>
+    <!-- External Shared Stylesheet -->
+    <link rel="preload" href="style.css?v=13" as="style">
+    <link rel="stylesheet" href="style.css?v=13">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XMBF3CRKPX');
     </script>
 
@@ -175,7 +121,7 @@
 
     <nav>
         <a href="/" class="nav-brand">
-            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="34" height="34">
+            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="32" height="32" fetchpriority="high" decoding="async">
             FIZA
         </a>
         <ul class="nav-links">
@@ -189,68 +135,109 @@
         </ul>
     </nav>
 
-    <main class="container" style="max-width: 850px; text-align: left; margin: 40px auto; padding: 0 20px;">
+    <main class="container" style="max-width: 900px; text-align: left; margin: 30px auto; padding: 0 20px;">
         
-        <div class="breadcrumbs-nav">
-            <a href="/">Home</a><span>›</span><a href="blog.html">Guides</a><span>›</span>Indian Valorant Discord Server
+        <!-- Breadcrumbs Navigation -->
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+            <a href="/" style="color: var(--saffron); text-decoration: none;">Home</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <a href="blog.html" style="color: var(--saffron); text-decoration: none;">Guides</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <span>Indian Valorant Hub</span>
         </div>
 
-        <span class="namaste" style="display: block; text-align: center;">2026 Esports & Gaming Guide</span>
-        <h1 style="text-align: center; font-size: 2.3rem; margin-bottom: 12px;">Best Indian Valorant Discord Server (2026)</h1>
-        <p class="subtitle" style="text-align: center; margin-bottom: 25px;">How to find active Mumbai server 5-stacks, non-toxic rank push partners, and custom scrim lobbies.</p>
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="namaste">2026 Competitive Esports Adda</span>
+            <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px;">Best Indian Valorant <span style="background: var(--saffron-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Discord Server (2026)</span></h1>
+            <p class="subtitle" style="margin-bottom: 0;">Find active Mumbai server 5-stacks, non-toxic rank grind teammates, low-ping callout lounges, and weekly custom 10-man scrims.</p>
+        </div>
 
-        <!-- Direct Answer / AEO Featured Snippet Target Block -->
+        <!-- Position-0 / AEO Direct Answer Snippet -->
         <div class="aeo-answer-box">
             <p>
                 <strong>What is the best Indian Valorant Discord server in 2026?</strong> <strong>FIZA</strong> is widely recognized as the top Indian Valorant Discord server. It offers 24/7 Mumbai server LFG channels categorized by rank (Iron to Immortal), dedicated 5-stack voice lounges with Level 3 384kbps crystal-clear audio, regional city squads for <a href="mumbai-delhi-discord-community.html" style="color: var(--saffron); font-weight: 700;">Delhi NCR & Mumbai</a>, custom 10-man community scrims, and strict zero-toxicity moderation. Compare top communities on our <a href="best-servers-2026.html" style="color: var(--saffron); font-weight: 700;">Top 10 Indian Discord Servers List</a>.
             </p>
         </div>
 
-        <div style="background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 25px; margin-bottom: 35px; backdrop-filter: blur(12px);">
-            <h2 style="font-size: 1.5rem; color: var(--white); margin-bottom: 12px;">Why Solo Queue on Mumbai Server Is Broken</h2>
-            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 15px;">
+        <!-- Problem Highlight Card -->
+        <section class="bento-card col-12" style="background: rgba(12, 14, 22, 0.65); margin: 25px 0;">
+            <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 10px;">Why Solo Queue on Mumbai Server Is Broken</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px;">
                 Anyone who has queued competitive matches on Valorant's Mumbai server knows the struggle: silent teammates with no comms, instant AFKs after round three, and toxic flaming. Solo queuing makes ranking up from Iron, Silver, or Diamond unnecessarily frustrating.
             </p>
-            <p style="color: var(--text-muted); line-height: 1.7;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
                 Joining a dedicated <a href="https://discord.gg/fiza" style="color: var(--saffron); font-weight: 700;">Indian Valorant Discord server</a> like <strong>FIZA</strong> eliminates the randomness. You get instant access to verified players, working microphones, and strategic callouts in our <a href="hindi-voice-chat-discord.html" style="color: var(--saffron); font-weight: 700;">active Hindi voice channels</a>.
             </p>
-        </div>
+        </section>
 
-        <div class="features" style="text-align: left; margin-bottom: 35px;">
-            <div class="feature-card" style="width: 100%;">
-                <h3 style="color: var(--saffron);">🎯 What Makes FIZA the #1 Desi Valorant Hub?</h3>
-                <ul style="color: var(--text-muted); line-height: 1.8; margin-left: 20px; margin-top: 10px;">
-                    <li><strong>Dedicated Rank LFG Channels:</strong> Find teammates categorized by rank tiers (Iron/Bronze/Silver, Gold/Platinum, and Diamond/Ascendant/Immortal).</li>
-                    <li><strong>Regional Metro Gaming Squads:</strong> Queue with fellow players from Delhi NCR (DU colleges, Noida, Gurugram) and Mumbai for zero-ping coordination and local gaming cafe LAN banter via our <a href="mumbai-delhi-discord-community.html" style="color: var(--saffron); font-weight: 700;">Delhi NCR & Mumbai Hub</a>.</li>
-                    <li><strong>Dedicated 5-Stack Voice Rooms:</strong> Custom user-limited voice channels designed for zero-delay callouts and clutch rounds with Level 3 384kbps audio quality.</li>
-                    <li><strong>Strict Anti-Toxicity Moderation:</strong> Zero tolerance for abusive language or rank shaming, ensuring a welcoming space for all players. Read our standards on <a href="server-reviews-2026.html" style="color: var(--saffron); font-weight: 700;">Server Reviews & Moderation Benchmarks</a>.</li>
-                    <li><strong>Custom 10-Man Tournaments:</strong> Regular community scrims, custom lobbies, and weekend deathmatch showdowns with Discord Nitro prizes.</li>
-                    <li><strong>Casual & Sandbox Alternatives:</strong> Looking for a break from tactical shooters? Hop into our <a href="indian-roblox-minecraft-discord.html" style="color: var(--saffron); font-weight: 700;">Roblox & Minecraft SMP lobbies</a> or our <a href="bgmi-custom-room-discord.html" style="color: var(--saffron); font-weight: 700;">BGMI custom rooms</a>.</li>
-                </ul>
+        <!-- Valorant Gaming Bento Grid -->
+        <section class="bento-grid">
+            <div class="bento-card col-8" style="border-top: 3px solid var(--saffron);">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Competitive Matchmaking</span>
+                <h3 style="color: var(--white); font-size: 1.3rem; margin: 0 0 10px;">🎯 Rank-Sorted Mumbai LFG Channels</h3>
+                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin: 0 0 14px;">Find comms-active teammates tailored to your competitive tier. Our looking-for-group boards are separated into Iron–Silver, Gold–Platinum, and Diamond–Immortal/Radiant to keep ranks balanced and games fun.</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="pill">Mic Mandatory</span>
+                    <span class="pill">Rank Roles</span>
+                    <span class="pill">Instant Matches</span>
+                </div>
             </div>
-        </div>
 
-        <div style="background: rgba(255, 153, 51, 0.08); border: 1px solid var(--saffron); border-radius: 16px; padding: 25px; margin-bottom: 35px; text-align: center;">
-            <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 8px;">Ready to push rank on Mumbai Server?</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Join thousands of Indian Valorant players in active voice channels right now.</p>
+            <div class="bento-card col-4" style="border-top: 3px solid #5865F2;">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Zero Delay Callouts</span>
+                <h3 style="color: var(--white); font-size: 1.2rem; margin: 0 0 8px;">🔊 5-Stack Voice Rooms</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; margin: 0;">User-limited 5-player rooms powered by Level 3 384kbps audio quality ensure clutch rounds are never lost to robotic voice lag.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Zero Toxicity</span>
+                <h3 style="color: #4ade80; font-size: 1.15rem; margin: 0 0 8px;">🛡️ Safe Rank Grinds</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Zero tolerance for toxicity, slurs, or rank shaming. Read our standards on <a href="server-reviews-2026.html" style="color: var(--saffron); font-weight: 700;">Server Reviews</a>.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Local Lobbies</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">🏛️ Metro City Squads</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Queue up with peers across our <a href="mumbai-delhi-discord-community.html" style="color: var(--saffron); font-weight: 700;">Delhi NCR & Mumbai Hub</a> for local gaming cafe LAN banter.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Weekly Tournaments</span>
+                <h3 style="color: var(--saffron); font-size: 1.15rem; margin: 0 0 8px;">⚔️ 10-Man Custom Scrims</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Compete in scheduled weekend 10-man customs, deathmatch showdowns, and Nitro-sponsored mini-tourneys.</p>
+            </div>
+        </section>
+
+        <!-- CTA Callout Banner -->
+        <div class="bento-card col-12" style="text-align: center; padding: 35px 20px; margin: 30px 0; border-color: rgba(255, 153, 51, 0.3);">
+            <h3 style="color: var(--white); font-size: 1.4rem; margin-bottom: 8px;">Ready to Push Rank on Mumbai Server?</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px;">Join thousands of Indian Valorant players in active looking-for-group rooms right now.</p>
             <a href="https://discord.gg/fiza" target="_blank" rel="noopener" class="cta-btn">Find Valorant Squad Now →</a>
         </div>
 
-        <div style="text-align: left; margin-bottom: 40px;">
+        <!-- Related Guides Grid -->
+        <div style="text-align: left; margin-bottom: 35px;">
             <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 12px;">Related Guides & Resources</h3>
-            <ul style="color: var(--saffron); line-height: 1.8; margin-left: 20px;">
-                <li><a href="best-indian-discord-server-2026.html" style="color: var(--saffron);">Why FIZA Is the Best Indian Discord Server in 2026</a></li>
-                <li><a href="mumbai-delhi-discord-community.html" style="color: var(--saffron);">Delhi NCR & Mumbai Regional Gaming Lounges</a></li>
-                <li><a href="best-servers-2026.html" style="color: var(--saffron);">Top Active Indian Discord Communities Comparison</a></li>
-                <li><a href="indian-roblox-minecraft-discord.html" style="color: var(--saffron);">Indian Roblox & Minecraft SMP Community Hub</a></li>
-                <li><a href="bgmi-custom-room-discord.html" style="color: var(--saffron);">BGMI Daily Custom Rooms & Scrims Guide</a></li>
-                <li><a href="find-friends-discord-india.html" style="color: var(--saffron);">How to Find Online Gaming Friends in India</a></li>
-            </ul>
+            <div class="home-blog-grid">
+                <a href="bgmi-custom-room-discord.html" class="home-blog-card">
+                    <h3>BGMI Daily Custom Rooms & Scrims</h3>
+                    <p>Daily custom matches, anti-grief scrims, and squad matchmaking.</p>
+                </a>
+                <a href="indian-roblox-minecraft-discord.html" class="home-blog-card">
+                    <h3>Indian Roblox & Minecraft SMP</h3>
+                    <p>Relax in casual community survival realms and mini-game lobbies.</p>
+                </a>
+                <a href="find-friends-discord-india.html" class="home-blog-card">
+                    <h3>How to Find Real Friends on Discord India</h3>
+                    <p>Connect over shared hobbies in verified, toxic-free community spaces.</p>
+                </a>
+            </div>
         </div>
 
         <div class="decor" style="text-align: center;">✧ ❂ ✧</div>
     </main>
 
+    <!-- Mobile Sticky CTA Bar -->
     <div class="mobile-sticky-cta">
         <div class="mobile-brand">FIZA Adda</div>
         <a href="https://discord.gg/fiza" class="mobile-btn" target="_blank" rel="noopener">Join Discord</a>
@@ -262,7 +249,6 @@
                 <h2>FIZA</h2>
                 <p>FIZA is the #1 <strong>Best Indian Discord server</strong> for gaming, making friends, and chilling. Join our active Desi community for BGMI, Valorant, Bollywood movie nights, and 24/7 toxic-free Hindi voice chats.</p>
             </div>
-            
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -274,7 +260,6 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
                 <h3>Community</h3>
                 <ul>
@@ -284,7 +269,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             &copy; 2026 FIZA Community. All rights reserved. Designed by Tojo & Riddler.
         </div>
