@@ -38,14 +38,24 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-color: var(--bg-dark);
+    /* Mobile-optimized lightweight ambient radial glow */
     background-image: 
         radial-gradient(circle at 12% 10%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 88% 25%, rgba(88, 101, 242, 0.08) 0%, transparent 45%),
-        linear-gradient(rgba(7, 8, 12, 0.7), rgba(7, 8, 12, 0.95)),
-        url('background.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+        radial-gradient(circle at 88% 25%, rgba(88, 101, 242, 0.08) 0%, transparent 45%);
+}
+
+/* Serve high-res desktop wallpaper only on larger viewports to pass responsive image tests */
+@media (min-width: 769px) {
+    body {
+        background-image: 
+            radial-gradient(circle at 12% 10%, rgba(255, 153, 51, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 88% 25%, rgba(88, 101, 242, 0.08) 0%, transparent 45%),
+            linear-gradient(rgba(7, 8, 12, 0.7), rgba(7, 8, 12, 0.95)),
+            url('background.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
 }
 
 /* ==========================================================================
@@ -221,7 +231,6 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Parent container for dual capsules */
 .dual-counter-wrap {
     display: flex !important;
     justify-content: center !important;
@@ -231,7 +240,6 @@ h1 {
     margin: 15px auto 25px !important;
 }
 
-/* Uniform capsule sizing rules */
 .stat-pill-badge,
 .live-counter-badge,
 .capsule-badge {
@@ -255,7 +263,6 @@ h1 {
     transition: all 0.25s ease !important;
 }
 
-/* Green online live state */
 .stat-pill-badge.online,
 .live-counter-badge,
 .capsule-badge.online {
@@ -264,7 +271,6 @@ h1 {
     color: #4ade80 !important;
 }
 
-/* Saffron verified community state */
 .stat-pill-badge.verified,
 .capsule-badge.verified {
     border-color: rgba(255, 153, 51, 0.35) !important;
@@ -408,7 +414,6 @@ h1 {
 .col-6  { grid-column: span 6; }
 .col-4  { grid-column: span 4; }
 
-/* Legacy Fallback .features compatibility */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
