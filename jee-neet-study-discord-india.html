@@ -19,82 +19,28 @@
     <meta property="og:image" content="https://bestindiandiscord.com/best_active_india_discord_servers.jpg">
     <meta property="og:locale" content="en_IN">
 
+    <!-- Performance & Preconnect Directives -->
+    <link rel="dns-prefetch" href="https://discord.com">
+    <link rel="preconnect" href="https://discord.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Asynchronous Non-Blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap">
+    </noscript>
     
-    <link rel="stylesheet" href="style.css?v=11">
-
-    <style>
-        /* Navigation GIF Logo Scaling & Alignment */
-        .nav-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .nav-logo-gif {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            filter: drop-shadow(0 0 6px rgba(255, 153, 51, 0.4));
-            transition: transform 0.2s ease;
-        }
-
-        .nav-brand:hover .nav-logo-gif {
-            transform: scale(1.08) rotate(5deg);
-        }
-
-        @media (max-width: 600px) {
-            .nav-logo-gif {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        .breadcrumbs-nav {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .breadcrumbs-nav a {
-            color: var(--saffron);
-            text-decoration: none;
-        }
-
-        .breadcrumbs-nav span {
-            margin: 0 6px;
-            opacity: 0.5;
-        }
-
-        .aeo-answer-box {
-            background: rgba(255, 153, 51, 0.08);
-            border-left: 4px solid var(--saffron);
-            border-radius: 8px;
-            padding: 18px 20px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .aeo-answer-box p {
-            color: var(--white);
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-    </style>
+    <!-- External Shared Stylesheet -->
+    <link rel="preload" href="style.css?v=13" as="style">
+    <link rel="stylesheet" href="style.css?v=13">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMBF3CRKPX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XMBF3CRKPX');
     </script>
 
@@ -178,7 +124,7 @@
 
     <nav>
         <a href="/" class="nav-brand">
-            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="34" height="34">
+            <img src="logo.gif" alt="FIZA Logo" class="nav-logo-gif" width="32" height="32" fetchpriority="high" decoding="async">
             FIZA
         </a>
         <ul class="nav-links">
@@ -192,70 +138,124 @@
         </ul>
     </nav>
 
-    <main class="container" style="max-width: 850px; text-align: left; margin: 40px auto; padding: 0 20px;">
+    <main class="container" style="max-width: 900px; text-align: left; margin: 30px auto; padding: 0 20px;">
         
-        <div class="breadcrumbs-nav">
-            <a href="/">Home</a><span>›</span><a href="blog.html">Guides</a><span>›</span>Indian Student Study Discord Server
+        <!-- Breadcrumbs Navigation -->
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+            <a href="/" style="color: var(--saffron); text-decoration: none;">Home</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <a href="blog.html" style="color: var(--saffron); text-decoration: none;">Guides</a>
+            <span style="margin: 0 6px; opacity: 0.5;">›</span>
+            <span>JEE & NEET Study Hub</span>
         </div>
 
-        <span class="namaste" style="text-align: center; display: block;">Productivity & Student Lounges</span>
-        <h1 style="text-align: center; font-size: 2.3rem; margin-bottom: 16px;">Indian Student Study Discord Server</h1>
-        
-        <!-- Direct Answer / AEO Featured Snippet Target Block -->
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="namaste">Productivity & Focus Adda</span>
+            <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px;">Indian Student Study <span style="background: var(--saffron-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Discord Server</span></h1>
+            <p class="subtitle" style="margin-bottom: 0;">24/7 silent camera-optional study lounges, automated Pomodoro timer bots, peer accountability, and distraction-free rooms for JEE, NEET, and university aspirants.</p>
+        </div>
+
+        <!-- Position-0 / AEO Direct Answer Snippet -->
         <div class="aeo-answer-box">
             <p>
                 <strong>What is the best Indian student study Discord server in 2026?</strong> <strong>FIZA</strong> is widely recognized as the top Indian student study server. Featuring 24/7 silent mic-muted study lounges, automated Pomodoro timer bots, screen-sharing accountability channels, and peer study groups for JEE, NEET, UPSC, and college exams (DU, IPU, IITs, Mumbai University), it offers a distraction-free, 100% SFW environment. Learn more on our <a href="indian-student-discord-community.html" style="color: var(--saffron); font-weight: 700;">Student Community Guide</a>.
             </p>
         </div>
 
-        <article style="color: var(--text-muted); line-height: 1.8; font-size: 1rem;">
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 30px 0 12px;">Study Smart with a Focused Indian Community</h2>
-            <p>Self-studying for competitive examinations or college degrees can be isolating. Our academic channels give you the structure and mutual peer accountability needed to maintain high productivity without intrusive distractions:</p>
+        <!-- Study Productivity Bento Grid -->
+        <section class="bento-grid">
+            <div class="bento-card col-8" style="border-top: 3px solid var(--saffron);">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Deep Focus Lounges</span>
+                <h3 style="color: var(--white); font-size: 1.3rem; margin: 0 0 10px;">📚 24/7 Silent & Camera-Optional Pomodoro VCs</h3>
+                <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin: 0 0 14px;">Studying alone for hours leads to burnout. FIZA provides automated 25/5 and 50/10 Pomodoro timer rooms where you study silently alongside hundreds of aspirants across India. Choose between mic-muted focus rooms, desk camera accountability channels, or screen-sharing workspaces.</p>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <span class="pill">Mic-Muted By Default</span>
+                    <span class="pill">25/5 & 50/10 Timers</span>
+                    <span class="pill">Screen-Share Allowed</span>
+                </div>
+            </div>
 
-            <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px; margin: 15px 0;">
-                <li><strong style="color: var(--white);">Silent & Lo-Fi Voice Lounges:</strong> Mute-only and camera-enabled study rooms with background study beats from our <a href="indian-music-karaoke-discord.html" style="color: var(--saffron); font-weight: 700;">Lo-Fi Music Lounges</a>.</li>
-                <li><strong style="color: var(--white);">Automated Pomodoro Bots:</strong> Timed 25/5 and 50/10 focus intervals to build consistent study discipline.</li>
-                <li><strong style="color: var(--white);">Regional Study Circles:</strong> Form local study groups with college peers from Delhi NCR (DU, IPU, IIT Delhi) and Mumbai through our <a href="mumbai-delhi-discord-community.html" style="color: var(--saffron); font-weight: 700;">Delhi NCR & Mumbai Hub</a>.</li>
-                <li><strong style="color: var(--white);">Late-Night Study Motivation:</strong> Active voice channels where students pull productive night sessions together in our <a href="late-night-vc-india.html" style="color: var(--saffron); font-weight: 700;">24/7 late night voice lounges</a>.</li>
-                <li><strong style="color: var(--white);">Post-Study Gaming & Chill:</strong> Once study targets are hit, unwind in our <a href="indian-roblox-minecraft-discord.html" style="color: var(--saffron); font-weight: 700;">Roblox & Minecraft SMP lobbies</a>.</li>
-                <li><strong style="color: var(--white);">Zero Distractions:</strong> Separate isolated channels away from the main gaming and chat sections.</li>
-            </ul>
+            <div class="bento-card col-4" style="border-top: 3px solid #5865F2;">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Acoustic Ambiance</span>
+                <h3 style="color: var(--white); font-size: 1.2rem; margin: 0 0 8px;">🎵 Lo-Fi Study Beats</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; margin: 0;">Dedicated 24/7 low-volume lo-fi streams in study channels to keep outside noise blocked during deep focus blocks.</p>
+            </div>
 
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 35px 0 12px;">How to Access Study Lounges</h2>
-            <ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Hometown Peers</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">🏛️ Regional Study Circles</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Collaborate with students from Delhi University, IPU, IIT Delhi, and Mumbai University via our <a href="mumbai-delhi-discord-community.html" style="color: var(--saffron); font-weight: 700;">Regional Metro Hub</a>.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Night Owls</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">🌙 Late-Night VC Motivation</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Pulling a productive night session before mocks? Join dozens of active night owls inside our <a href="late-night-vc-india.html" style="color: var(--saffron); font-weight: 700;">Late Night Voice Rooms</a>.</p>
+            </div>
+
+            <div class="bento-card col-4">
+                <span class="namaste" style="font-size: 0.75rem; margin-bottom: 4px;">Post-Study Unwind</span>
+                <h3 style="color: var(--white); font-size: 1.15rem; margin: 0 0 8px;">☕ Chai Pe Charcha Break</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;">Once study quotas are met, take a mental break in our casual <a href="hindi-voice-chat-discord.html" style="color: var(--saffron); font-weight: 700;">Hindi Voice Lounges</a> or casual gaming lobbies.</p>
+            </div>
+        </section>
+
+        <!-- Access Steps Card -->
+        <section class="bento-card col-12" style="margin: 25px 0; background: rgba(12, 14, 22, 0.65);">
+            <h3 style="color: var(--white); font-size: 1.25rem; margin-bottom: 12px;">How to Access Study Lounges on FIZA</h3>
+            <ol style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; padding-left: 20px; margin: 0;">
                 <li>Join the server via <a href="https://discord.gg/fiza" target="_blank" rel="noopener" style="color: var(--saffron); font-weight: 700;">discord.gg/fiza</a>.</li>
-                <li>Select the <strong>Student / Focus Mode</strong> role in the <code>#roles</code> channel.</li>
-                <li>Enter the <code>#study-lounge</code> and join an open study VC right away.</li>
+                <li>Visit the <code>#roles</code> channel and claim the <strong>Student / Focus Mode</strong> tag.</li>
+                <li>Navigate to the <code>#study-lounge</code> category to hop into an active Pomodoro VC or camera focus channel immediately.</li>
             </ol>
+        </section>
 
-            <div style="background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; text-align: center; margin: 40px 0;">
-                <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 8px;">Boost Your Daily Study Hours</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Join thousands of students staying accountable and hitting their exam goals.</p>
-                <a href="https://discord.gg/fiza" target="_blank" rel="noopener" class="cta-btn">Join Student Study Rooms →</a>
+        <!-- CTA Callout Banner -->
+        <div class="bento-card col-12" style="text-align: center; padding: 35px 20px; margin: 30px 0; border-color: rgba(255, 153, 51, 0.3);">
+            <h3 style="color: var(--white); font-size: 1.4rem; margin-bottom: 8px;">Boost Your Daily Study Hours Today</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px;">Join thousands of students staying accountable, finishing syllabus targets, and acing their competitive exams.</p>
+            <a href="https://discord.gg/fiza" target="_blank" rel="noopener" class="cta-btn">Join Student Study Rooms →</a>
+        </div>
+
+        <!-- Directory Interlink Box -->
+        <div style="text-align: left; margin-bottom: 35px;">
+            <h3 style="color: var(--white); font-size: 1.3rem; margin-bottom: 12px;">Related Guides & Campus Resources</h3>
+            <div class="home-blog-grid">
+                <a href="indian-student-discord-community.html" class="home-blog-card">
+                    <h3>Student & Campus Community Guide</h3>
+                    <p>DU, IPU, and engineering college circles, campus discussions, and SFW teen hangouts.</p>
+                </a>
+                <a href="best-servers-2026.html" class="home-blog-card">
+                    <h3>Top 10 Indian Discord Servers (2026)</h3>
+                    <p>Compare India's largest Discord communities for voice activity, moderation, and study spaces.</p>
+                </a>
+                <a href="find-friends-discord-india.html" class="home-blog-card">
+                    <h3>How to Find Real Friends in India</h3>
+                    <p>Wholesome, safe strategies to build supportive academic and peer circles online.</p>
+                </a>
             </div>
+        </div>
 
-            <!-- Interlinking to Directory -->
-            <div style="background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 12px; margin: 30px 0; border: 1px dashed rgba(255, 153, 51, 0.3);">
-                <p style="margin-bottom: 8px; font-weight: 800; color: var(--saffron);">📖 EXPLORE POPULAR SERVERS:</p>
-                <p style="margin: 0;">See how study communities rank among top Indian groups on our <a href="best-servers-2026.html" style="color: var(--saffron); font-weight: 700;">Top 10 Indian Discord Servers to Join (2026 List)</a> or check our comprehensive <a href="indian-student-discord-community.html" style="color: var(--saffron); font-weight: 700;">Campus Student Community Guide</a>.</p>
-            </div>
-
-            <h2 style="color: var(--white); font-size: 1.4rem; margin: 35px 0 12px;">Frequently Asked Questions</h2>
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <h3 style="color: var(--saffron); font-size: 1.1rem; margin-bottom: 5px;">Do I have to turn on my webcam to use study rooms?</h3>
-                    <p>No, webcams are optional. You can join screen-share rooms, camera-on accountability channels, or simply sit muted with your headphones on.</p>
+        <!-- FAQ Section -->
+        <section style="margin: 35px 0 25px;">
+            <h2 style="color: var(--white); font-size: 1.5rem; margin-bottom: 18px;">Frequently Asked Questions</h2>
+            <div class="bento-grid" style="margin-top: 0;">
+                <div class="bento-card col-12">
+                    <h4 style="color: var(--saffron); font-size: 1.05rem; margin: 0 0 6px;">Do I have to turn on my webcam to use study rooms?</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">No, webcams are completely optional. You can join screen-share rooms, desk-cam accountability lounges, or sit silently muted with your headphones on.</p>
                 </div>
-                <div>
-                    <h3 style="color: var(--saffron); font-size: 1.1rem; margin-bottom: 5px;">Are the study rooms free?</h3>
-                    <p>Yes, all Pomodoro channels and student focus lounges on FIZA are 100% free to access.</p>
+
+                <div class="bento-card col-12">
+                    <h4 style="color: var(--saffron); font-size: 1.05rem; margin: 0 0 6px;">Are the study rooms free to use?</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Yes, all Pomodoro channels, silent study rooms, and peer accountability lounges on FIZA are 100% free to access for all members.</p>
                 </div>
             </div>
-        </article>
+        </section>
 
         <div class="decor" style="text-align: center;">✧ ❂ ✧</div>
     </main>
 
+    <!-- Mobile Sticky CTA Bar -->
     <div class="mobile-sticky-cta">
         <div class="mobile-brand">FIZA Adda</div>
         <a href="https://discord.gg/fiza" class="mobile-btn" target="_blank" rel="noopener">Join Discord</a>
