@@ -611,7 +611,14 @@ footer {
 }
 
 /* ==========================================================================
-   Mobile Responsiveness
+   Mobile Sticky CTA Base (Hidden on Desktop)
+   ========================================================================== */
+.mobile-sticky-cta {
+    display: none;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness (< 768px)
    ========================================================================== */
 @media (max-width: 768px) {
     body {
@@ -678,12 +685,13 @@ footer {
 
     .mobile-sticky-cta .mobile-btn {
         background: var(--saffron-gradient);
-        color: #080808;
+        color: #080808 !important;
         padding: 8px 18px;
         border-radius: var(--radius-pill);
         text-decoration: none;
         font-weight: 700;
         font-size: 0.85rem;
         box-shadow: 0 4px 12px rgba(255, 153, 51, 0.35);
+        display: inline-block;
     }
 }
